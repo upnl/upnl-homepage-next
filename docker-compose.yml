@@ -1,0 +1,12 @@
+# This docker compose file is written only for development and testing purposes.
+
+services:
+  nextjs:
+    image: node:22-alpine
+    container_name: upnl-nextjs
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: ["yarn", "dev"]
+    ports:
+      - 3000:3000
