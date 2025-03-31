@@ -44,4 +44,4 @@ next-env.d.ts
 /docker/
 
 # generated Prisma client
-generated/prisma/
+/prisma/client
