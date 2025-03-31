@@ -1,9 +1,24 @@
 # This docker compose file is written only for development and testing purposes.
 
 services:
+  mysql:
+    image: mysql:8.0
+    container_name: upnl-mysql
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=upnl_db
+      - MYSQL_USER=upnl
+      - MYSQL_PASSWORD=password
+    ports:
+      - 3306:3306
+
   nextjs:
     image: node:22-alpine
     container_name: upnl-nextjs
+    depends_on:
+      - mysql
     volumes:
       - .:/workspace
     working_dir: /workspace
