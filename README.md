@@ -10,5 +10,12 @@ cd upnl-homepage-next
 
 pnpm install
 
+# Prisma Client 생성
+npx prisma generate
+
+# DB 먼저 띄우고 Prisma Migration 적용
+docker-compose up -d mysql
+DATABASE_URL="mysql://upnl:password@localhost:3306/upnl_db" npx prisma migrate deploy
+
 docker-compose up -d
 ```
