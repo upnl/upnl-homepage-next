@@ -10,6 +10,7 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json pnpm-lock.yaml ./
+COPY prisma/schema.prisma ./prisma/
 RUN yarn global add pnpm && pnpm i --frozen-lockfile
 
 
@@ -17,6 +18,7 @@ RUN yarn global add pnpm && pnpm i --frozen-lockfile
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/prisma/client ./prisma/client
 COPY . .
 
 # Next.js collects completely anonymous telemetry data about general usage.
