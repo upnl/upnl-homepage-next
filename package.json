@@ -6,9 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate --allow-no-models"
   },
   "dependencies": {
+    "@prisma/client": "6.5.0",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -22,6 +24,7 @@
     "eslint-config-next": "15.2.2",
     "eslint-config-prettier": "^10.1.1",
     "prettier": "^3.5.3",
+    "prisma": "^6.5.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

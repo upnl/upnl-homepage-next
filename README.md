@@ -8,7 +8,12 @@
 git clone git@github.com:upnl/upnl-homepage-next.git
 cd upnl-homepage-next
 
+# package 설치 + Prisma Client 생성 (postinstall)
 pnpm install
+
+# DB 먼저 띄우고 Prisma Migration 적용
+docker-compose up -d mysql
+DATABASE_URL="mysql://upnl:password@localhost:3306/upnl_db" npx prisma migrate deploy
 
 docker-compose up -d
 ```

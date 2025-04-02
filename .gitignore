@@ -42,3 +42,6 @@ next-env.d.ts
 
 # local Docker volume
 /docker/
+
+# generated Prisma client
+/prisma/client
