@@ -26,7 +26,7 @@ model admin {
 model article {
   no            Int      @id @default(autoincrement())
   title         String   @db.VarChar(255)
-  content       String   @db.Text // was content_raw in sqlalchemy
+  content       String   @db.Text
   date          DateTime
   writer_id     Int
   writer_name   String   @db.VarChar(20)
@@ -37,10 +37,10 @@ model article {
   render_type   String   @default("markdown") @db.VarChar(20) // markdown, html, html+autobr
 
   writer    user       @relation(fields: [writer_id], references: [no])
-  comment   comment[] // -> comments?
+  comments  comment[]
   files     file[]
-  panoramas panorama[] // 1-to-1?
-  purchases purchase[] // 1-to-1?
+  panoramas panorama[]
+  purchase  purchase?
 }
 
 model board {
@@ -48,7 +48,7 @@ model board {
   bbs_name String @db.VarChar(20)
   position Int
 
-  project project[] // -> projects
+  projects project[]
 }
 
 model comment {
@@ -82,13 +82,15 @@ model index {
 
 model panorama {
   id         Int      @id @default(autoincrement())
-  date       DateTime @map("date") // is index
+  date       DateTime @map("date")
   actor_id   Int
   article_id Int
   action     Int // (1, 'new-article'), (2, 'new-comment')
 
   actor   user    @relation(fields: [actor_id], references: [no])
   article article @relation(fields: [article_id], references: [no])
+
+  @@index([date])
 }
 
 model project {
@@ -130,11 +132,11 @@ model purchase {
   product_name   String  @db.VarChar(255)
   about          String  @db.VarChar(200)
   url            String  @db.VarChar(255)
-  article_id     Int
+  article_id     Int     @unique
   start_year     Int
   start_semester String  @db.VarChar(20)
   is_complete    Boolean
-  requester      String  @db.VarChar(20)
+  requester      String  @db.VarChar(20) // -> foreign key?
 
   assenter user[]  @relation("user_purchase_link") // user_link
   article  article @relation(fields: [article_id], references: [no])
@@ -213,20 +215,20 @@ model user {
   wanttodo     String  @db.Text // -> want_to_do
   profile      String? @db.Text // null to blank string?
 
-  articles          article[] // article in original
-  sessions          sessions[]
-  comments          comment[]
-  panoramas         panorama[] // 1-to-1?
-  ordered_projects  project[] // new
-  requested_promote promote[] // new // 1-to-1?
-  ordered_studies   study[] // new
-  tags              tag[]
+  articles           article[]
+  sessions           sessions[]
+  comments           comment[]
+  panoramas          panorama[]
+  projects_ordered   project[]
+  promotes_requested promote[]
+  studies_ordered    study[]
+  tags               tag[]
 
-  projects  project[]  @relation("user_project_link") // user_link // project in original
-  studies   study[]    @relation("user_study_link") // user_link// study in original
-  promotes  promote[]  @relation("user_promote_link") // user_link // promote in original // -> assented_promotes?
-  workshops workshop[] @relation("user_workshop_link") // user_link
-  purchases purchase[] @relation("user_purchase_link") // user_link
+  projects_participated  project[]  @relation("user_project_link") // user_link
+  studies_participated   study[]    @relation("user_study_link") // user_link
+  promotes_assented      promote[]  @relation("user_promote_link") // user_link
+  workshops_participated workshop[] @relation("user_workshop_link") // user_link
+  purchases_assented     purchase[] @relation("user_purchase_link") // user_link
 }
 
 model workshop {
