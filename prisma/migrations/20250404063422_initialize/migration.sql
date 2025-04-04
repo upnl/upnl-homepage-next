@@ -17,8 +17,8 @@ CREATE TABLE `article` (
     `date` DATETIME(3) NOT NULL,
     `writer_id` INTEGER NOT NULL,
     `writer_name` VARCHAR(20) NOT NULL,
-    `bbs_url` VARCHAR(20) NOT NULL,
-    `bbs_name` VARCHAR(20) NOT NULL,
+    `board_no` VARCHAR(20) NOT NULL,
+    `board_name` VARCHAR(20) NOT NULL,
     `images_on_top` BOOLEAN NOT NULL,
     `is_notice` BOOLEAN NOT NULL,
     `render_type` VARCHAR(20) NOT NULL DEFAULT 'markdown',
@@ -28,11 +28,11 @@ CREATE TABLE `article` (
 
 -- CreateTable
 CREATE TABLE `board` (
-    `bbs_url` INTEGER NOT NULL AUTO_INCREMENT,
-    `bbs_name` VARCHAR(20) NOT NULL,
+    `no` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(20) NOT NULL,
     `position` INTEGER NOT NULL,
 
-    PRIMARY KEY (`bbs_url`)
+    PRIMARY KEY (`no`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
@@ -75,6 +75,7 @@ CREATE TABLE `panorama` (
     `article_id` INTEGER NOT NULL,
     `action` INTEGER NOT NULL,
 
+    INDEX `panorama_date_idx`(`date`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -87,7 +88,7 @@ CREATE TABLE `project` (
     `introduction` TEXT NOT NULL,
     `thumbnail` VARCHAR(255) NOT NULL,
     `status` VARCHAR(20) NOT NULL DEFAULT 'working',
-    `bbs_url` INTEGER NOT NULL,
+    `board_no` INTEGER NOT NULL,
     `orderer_id` INTEGER NOT NULL,
     `start_date` DATETIME(3) NOT NULL,
     `finish_date` DATETIME(3) NULL,
@@ -103,7 +104,7 @@ CREATE TABLE `promote` (
     `no` INTEGER NOT NULL AUTO_INCREMENT,
     `requester_id` INTEGER NOT NULL,
     `requester_name` VARCHAR(20) NOT NULL,
-    `bbs_url` INTEGER NOT NULL,
+    `board_no` INTEGER NOT NULL,
     `start_year` INTEGER NOT NULL,
     `start_semester` VARCHAR(20) NOT NULL,
 
@@ -122,6 +123,7 @@ CREATE TABLE `purchase` (
     `is_complete` BOOLEAN NOT NULL,
     `requester` VARCHAR(20) NOT NULL,
 
+    UNIQUE INDEX `purchase_article_id_key`(`article_id`),
     PRIMARY KEY (`no`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -147,7 +149,7 @@ CREATE TABLE `study` (
     `name` VARCHAR(255) NOT NULL,
     `introduction` TEXT NOT NULL,
     `status` VARCHAR(20) NOT NULL DEFAULT 'working',
-    `bbs_url` INTEGER NOT NULL,
+    `board_no` INTEGER NOT NULL,
     `start_date` DATETIME(3) NOT NULL,
     `finish_date` DATETIME(3) NULL,
     `orderer_id` INTEGER NOT NULL,
@@ -200,7 +202,7 @@ CREATE TABLE `user` (
     `dept` VARCHAR(50) NOT NULL,
     `level` VARCHAR(10) NOT NULL,
     `theme` VARCHAR(20) NOT NULL DEFAULT 'default',
-    `wanttodo` TEXT NOT NULL,
+    `want_to_do` TEXT NOT NULL,
     `profile` TEXT NULL,
 
     UNIQUE INDEX `user_id_key`(`id`),
@@ -285,7 +287,7 @@ ALTER TABLE `panorama` ADD CONSTRAINT `panorama_actor_id_fkey` FOREIGN KEY (`act
 ALTER TABLE `panorama` ADD CONSTRAINT `panorama_article_id_fkey` FOREIGN KEY (`article_id`) REFERENCES `article`(`no`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `project` ADD CONSTRAINT `project_bbs_url_fkey` FOREIGN KEY (`bbs_url`) REFERENCES `board`(`bbs_url`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `project` ADD CONSTRAINT `project_board_no_fkey` FOREIGN KEY (`board_no`) REFERENCES `board`(`no`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `project` ADD CONSTRAINT `project_orderer_id_fkey` FOREIGN KEY (`orderer_id`) REFERENCES `user`(`no`) ON DELETE RESTRICT ON UPDATE CASCADE;
