@@ -5,12 +5,236 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
-  output = "./client"
+  provider      = "prisma-client-js"
+  output        = "./client"
   binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model admin {
+  id       Int       @id @default(autoincrement())
+  name     String    @db.VarChar(20)
+  period   DateTime?
+  year     Int?
+  semester String?   @db.VarChar(20)
+}
+
+model article {
+  no            Int      @id @default(autoincrement())
+  title         String   @db.VarChar(255)
+  content       String   @db.Text // was content_raw in sqlalchemy
+  date          DateTime
+  writer_id     Int
+  writer_name   String   @db.VarChar(20)
+  bbs_url       String   @db.VarChar(20)
+  bbs_name      String   @db.VarChar(20)
+  images_on_top Boolean
+  is_notice     Boolean
+  render_type   String   @default("markdown") @db.VarChar(20) // markdown, html, html+autobr
+
+  writer    user       @relation(fields: [writer_id], references: [no])
+  comment   comment[] // -> comments?
+  files     file[]
+  panoramas panorama[] // 1-to-1?
+  purchases purchase[] // 1-to-1?
+}
+
+model board {
+  bbs_url  Int    @id @default(autoincrement()) // -> no
+  bbs_name String @db.VarChar(20)
+  position Int
+
+  project project[] // -> projects
+}
+
+model comment {
+  no          Int      @id @default(autoincrement())
+  content     String   @db.Text
+  date        DateTime
+  writer_id   Int
+  writer_name String   @db.VarChar(20)
+  article_id  Int
+
+  writer  user    @relation(fields: [writer_id], references: [no])
+  article article @relation(fields: [article_id], references: [no])
+}
+
+model file {
+  no              Int    @id @default(autoincrement())
+  s_name          String @db.VarChar(255)
+  filename        String @db.VarChar(255)
+  target_category Int // 파일이 첨부되어 있는 위치(1 : 게시글, 2 : 프로젝트페이지)
+  article_id      Int? // why nullable?
+  project_id      Int? // why nullable?
+
+  article article? @relation(fields: [article_id], references: [no])
+  project project? @relation(fields: [project_id], references: [no])
+}
+
+model index {
+  id      Int    @id @default(autoincrement())
+  content String @db.Text
+}
+
+model panorama {
+  id         Int      @id @default(autoincrement())
+  date       DateTime @map("date") // is index
+  actor_id   Int
+  article_id Int
+  action     Int // (1, 'new-article'), (2, 'new-comment')
+
+  actor   user    @relation(fields: [actor_id], references: [no])
+  article article @relation(fields: [article_id], references: [no])
+}
+
+model project {
+  no           Int       @id @default(autoincrement())
+  name         String    @db.VarChar(255)
+  genre        String    @db.VarChar(255)
+  is_public    Boolean
+  introduction String    @db.Text
+  thumbnail    String    @db.VarChar(255)
+  status       String    @default("working") @db.VarChar(20)
+  bbs_url      Int // -> board_no
+  orderer_id   Int
+  start_date   DateTime
+  finish_date  DateTime?
+  detail       String?   @db.Text
+  executable   String?   @db.VarChar(255)
+  is_show_page Boolean? // why nullable?
+
+  board        board  @relation(fields: [bbs_url], references: [bbs_url])
+  orderer      user   @relation(fields: [orderer_id], references: [no])
+  participants user[] @relation("user_project_link") // user_link
+  files        file[]
+}
+
+model promote {
+  no             Int    @id @default(autoincrement())
+  requester_id   Int
+  requester_name String @db.VarChar(20)
+  bbs_url        Int // no foreign key?
+  start_year     Int
+  start_semester String @db.VarChar(20)
+
+  requester user   @relation(fields: [requester_id], references: [no])
+  assenter  user[] @relation("user_promote_link") // user_link
+}
+
+model purchase {
+  no             Int     @id @default(autoincrement())
+  product_name   String  @db.VarChar(255)
+  about          String  @db.VarChar(200)
+  url            String  @db.VarChar(255)
+  article_id     Int
+  start_year     Int
+  start_semester String  @db.VarChar(20)
+  is_complete    Boolean
+  requester      String  @db.VarChar(20)
+
+  assenter user[]  @relation("user_purchase_link") // user_link
+  article  article @relation(fields: [article_id], references: [no])
+}
+
+model sessions {
+  no             Int     @id @default(autoincrement())
+  title          String? @db.VarChar(255)
+  introduction   String? @db.Text
+  public_level   Int?
+  s_filename     String? @db.VarChar(255)
+  filename       String? @db.VarChar(255)
+  workshop_id    Int
+  presenter_id   Int?
+  presenter_name String  @db.VarChar(20)
+  present_order  Int
+
+  workshop  workshop @relation(fields: [workshop_id], references: [no])
+  presenter user?    @relation(fields: [presenter_id], references: [no])
+}
+
+model study {
+  no           Int       @id @default(autoincrement())
+  name         String    @db.VarChar(255)
+  introduction String    @db.Text
+  status       String    @default("working") @db.VarChar(20)
+  bbs_url      Int
+  start_date   DateTime
+  finish_date  DateTime?
+  orderer_id   Int
+
+  orderer      user   @relation(fields: [orderer_id], references: [no])
+  participants user[] @relation("user_study_link") // user_link
+}
+
+model tag {
+  no              Int     @id @default(autoincrement())
+  content         String  @db.VarChar(255)
+  tagger_id       Int
+  tagger_name     String  @db.VarChar(20)
+  target_category Int // 태그 대상의 종류(1 : 게시글, 2 : 프로젝트, 3 : 스터디, 4 : 워크샵)
+  target_id       Int
+  is_public       Boolean
+  base_id         Int
+
+  tagger   user     @relation(fields: [tagger_id], references: [no])
+  base_tag tagCount @relation(fields: [base_id], references: [no])
+}
+
+model tagCount {
+  no      Int    @id @default(autoincrement())
+  content String @db.VarChar(255)
+  count   Int    @default(1)
+
+  tags tag[]
+}
+
+model term {
+  id      Int    @id @default(autoincrement())
+  content String @db.Text
+}
+
+model user {
+  no           Int     @id @default(autoincrement())
+  id           String  @unique @db.VarChar(20)
+  passwd       String  @db.VarChar(128)
+  name         String  @db.VarChar(20)
+  email        String  @db.VarChar(50)
+  email_public Boolean
+  phone        String  @db.VarChar(20)
+  phone_public Boolean
+  year         Int? // why null?
+  dept         String  @db.VarChar(50)
+  level        String  @db.VarChar(10)
+  theme        String  @default("default") @db.VarChar(20)
+  wanttodo     String  @db.Text // -> want_to_do
+  profile      String? @db.Text // null to blank string?
+
+  articles          article[] // article in original
+  sessions          sessions[]
+  comments          comment[]
+  panoramas         panorama[] // 1-to-1?
+  ordered_projects  project[] // new
+  requested_promote promote[] // new // 1-to-1?
+  ordered_studies   study[] // new
+  tags              tag[]
+
+  projects  project[]  @relation("user_project_link") // user_link // project in original
+  studies   study[]    @relation("user_study_link") // user_link// study in original
+  promotes  promote[]  @relation("user_promote_link") // user_link // promote in original // -> assented_promotes?
+  workshops workshop[] @relation("user_workshop_link") // user_link
+  purchases purchase[] @relation("user_purchase_link") // user_link
+}
+
+model workshop {
+  no         Int      @id @default(autoincrement())
+  nth        Int      @unique
+  place      String   @db.VarChar(20)
+  start_date DateTime
+
+  sessions     sessions[]
+  participants user[]     @relation("user_workshop_link") // user_link
 }
