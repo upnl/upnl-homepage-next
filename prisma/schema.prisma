@@ -30,7 +30,7 @@ model article {
   date          DateTime
   writer_id     Int
   writer_name   String   @db.VarChar(20)
-  board_no      String   @db.VarChar(20) // -> foreign key?
+  board_no      String   @db.VarChar(20) // add foreign key?
   board_name    String   @db.VarChar(20)
   images_on_top Boolean
   is_notice     Boolean
@@ -68,8 +68,8 @@ model file {
   s_name          String @db.VarChar(255)
   filename        String @db.VarChar(255)
   target_category Int // 파일이 첨부되어 있는 위치(1 : 게시글, 2 : 프로젝트페이지)
-  article_id      Int? // why nullable?
-  project_id      Int? // why nullable?
+  article_id      Int? // target_category = 2 이면 null
+  project_id      Int? // target_category = 1 이면 null
 
   article article? @relation(fields: [article_id], references: [no])
   project project? @relation(fields: [project_id], references: [no])
@@ -85,7 +85,7 @@ model panorama {
   date       DateTime @map("date")
   actor_id   Int
   article_id Int
-  action     Int // (1, 'new-article'), (2, 'new-comment')
+  action     Int // 파노라마 항목 분류(1 : 새 게시글, 2 : 새 댓글)
 
   actor   user    @relation(fields: [actor_id], references: [no])
   article article @relation(fields: [article_id], references: [no])
@@ -107,7 +107,7 @@ model project {
   finish_date  DateTime?
   detail       String?   @db.Text
   executable   String?   @db.VarChar(255)
-  is_show_page Boolean? // why nullable?
+  is_show_page Boolean? // change null to False
 
   board        board  @relation(fields: [board_no], references: [no])
   orderer      user   @relation(fields: [orderer_id], references: [no])
@@ -119,7 +119,7 @@ model promote {
   no             Int    @id @default(autoincrement())
   requester_id   Int
   requester_name String @db.VarChar(20)
-  board_no       Int // -> foreign key?
+  board_no       Int // add foreign key?
   start_year     Int
   start_semester String @db.VarChar(20)
 
@@ -136,7 +136,7 @@ model purchase {
   start_year     Int
   start_semester String  @db.VarChar(20)
   is_complete    Boolean
-  requester      String  @db.VarChar(20) // -> foreign key?
+  requester      String  @db.VarChar(20) // add foreign key?
 
   assenter user[]  @relation("user_purchase_link")
   article  article @relation(fields: [article_id], references: [no])
@@ -163,7 +163,7 @@ model study {
   name         String    @db.VarChar(255)
   introduction String    @db.Text
   status       String    @default("working") @db.VarChar(20)
-  board_no     Int // -> foreign key?
+  board_no     Int // add foreign key?
   start_date   DateTime
   finish_date  DateTime?
   orderer_id   Int
@@ -208,12 +208,12 @@ model user {
   email_public Boolean
   phone        String  @db.VarChar(20)
   phone_public Boolean
-  year         Int? // why null?
+  year         Int? // fill in null and zero
   dept         String  @db.VarChar(50)
   level        String  @db.VarChar(10)
   theme        String  @default("default") @db.VarChar(20)
   want_to_do   String  @db.Text
-  profile      String? @db.Text // null to blank string?
+  profile      String? @db.Text // change null to empty string
 
   articles           article[]
   sessions           sessions[]
