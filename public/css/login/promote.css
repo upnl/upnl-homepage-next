@@ -1,0 +1,89 @@
+#promote {
+  width: 100%;
+}
+
+#promote_title {
+  float: left;
+  display: inline-block;
+}
+
+#promote_title h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#request_promote {
+  float: right;
+  width: 100px;
+  height: 30px;
+  margin-top: 0px;
+  margin-right: 15px;
+  padding: 1px 6px;
+}
+
+#promote_detail {
+  clear: both;
+}
+
+.promote {
+  float: left;
+  width: 350px;
+  min-height:160px;
+  margin: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.promote_info {
+}
+
+.promote_title {
+}
+
+.promote_title h4 {
+  margin: 0;
+}
+
+.promote_date {
+  font-size: 12px;
+  text-align:center;
+}
+
+.promote_about {
+  width: 100%;
+  margin: 10px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.agree_number {
+  font-weight: bold;
+}
+
+.agree_member {
+  font-size:12px;
+  width:100%;
+}
+
+.agree_manage {
+  text-align: right;
+  margin-top:10px;
+}
+
+.agree_manage form {
+  display: inline-block;
+  margin: 0;
+}
+
+.agree_manage button {
+  width: 45px;
+  height: 25px;
+}
+
+.promote_left {
+  width:150px;
+  height:160px;
+  float:left;
+}

@@ -1,0 +1,142 @@
+#board_list_content h4 {
+  float: left;
+  margin: 0;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.list_switch {
+  float: right;
+  margin-right: 10px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#working_study_list, #pending_study_list {
+  clear: both;
+}
+
+.board_name h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.control-label.write_form {
+}
+
+.controls.write_form {
+  margin-left: 0;
+}
+
+.controls.write_form input {
+  width: 98%;
+}
+
+.above_textarea {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.render-type-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.render-type-list li {
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.render-type-list li label {
+  display: inline-block;
+}
+
+p.info {
+  font-size: 90%;
+}
+
+p.info a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
+}
+
+.content {
+  width: 100%;
+  height: 400px;
+  max-height: 800px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.below_textarea {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.file_list {
+  margin-bottom: 10px;
+}
+
+.file_list .file {
+}
+
+.file_list .file .delete {
+  margin-left: 5px;
+}
+
+.upload_file {
+  float: left;
+  width: 80%;
+  margin: 0;
+}
+
+.text_input {
+  float: left;
+  width: 300px;
+  margin-right: 5px;
+}
+
+.upload_file {
+  position: relative;
+  width: 70px;
+  height: 30px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+#file_input_button {
+  position: absolute;
+  top: 0px;
+}
+
+#file_input {
+  position: absolute;
+  font-size: 35px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.write {
+  float:right;
+}
+
+#write #file_input_button, #add_file_button, .write button {
+  min-width: 70px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+}
+
+#previewWrapper {
+  display: none;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#preview {
+  border-top: 2px dotted #ccc;
+  padding: 10px 0;
+}

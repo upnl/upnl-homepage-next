@@ -1,0 +1,27 @@
+.container {
+  width: 970px;
+}
+
+#complete {
+  width: 75%;
+  margin:0 auto 30px auto;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#complete_title {
+  margin: 0 auto;
+}
+
+#complete_announcement {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#to_main button {
+  width:200px;
+  height:60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

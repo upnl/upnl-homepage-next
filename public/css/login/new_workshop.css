@@ -1,0 +1,114 @@
+#workshop_list_content h4 {
+  float: left;
+  margin: 0;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.list_switch {
+  float: right;
+  margin-right: 10px;
+  line-height: 30px;
+}
+
+.workshop_category {
+  cursor: pointer;
+}
+
+.workshop_element {
+  clear: both;
+}
+
+#new_workshop_title h3, #edit_workshop_title h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+#new_workshop_form, #edit_workshop_form {
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.controls input[type=text], .controls input[type=date] , .controls textarea {
+  width:280px;
+}
+
+#presenter_chosen, #nonmember {
+  width:200px !important;
+}
+
+#participants_chosen {
+  width:295px !important;
+}
+
+.presenter {
+  height:26px;
+  line-height:26px;
+  margin:0 3px;
+}
+
+.presenter_name {
+  margin-right:3px;
+}
+
+#add_presenter {
+  width:90px;
+  font-size:13px;
+}
+
+#new_workshop_presenter {
+  width: 295px;
+  min-height: 30px;
+}
+
+#new_workshop_presenter button {
+  font-size: 10px;
+}
+
+#add_presenter {
+  display: inline;
+}
+
+#add_nonmember {
+  display: inline;
+}
+
+#add_presenter button, #add_nonmember button {
+  margin-left: 4px;
+  padding: 5px 2px;
+}
+
+#new_workshop_presenter {
+}
+
+.chosen-container .chosen-results, .chosen-container-multi .chosen-results {
+  max-height: 40px;
+}
+
+.chosen-results {
+  max-height: 80px;
+}
+
+.write button {
+  width: 300px;
+  margin-left: 180px;
+  box-sizing: border-box;
+  padding: 5px 2px;
+}
+
+table.list {
+  margin-top:5px;
+  width:100%;
+}
+
+.list tr td {
+  border:2px solid;
+}
+
+.list tr th {
+  border:2px solid;
+}
+
+.list td {
+  text-align:center;
+}

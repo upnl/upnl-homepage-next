@@ -1,0 +1,78 @@
+#workshop_list_content h4 {
+  float: left;
+  margin: 0;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.list_switch {
+  float: right;
+  margin-right: 10px;
+  line-height: 30px;
+}
+
+.workshop_category {
+  cursor: pointer;
+}
+
+.workshop_element {
+  clear: both;
+}
+
+#edit_session {
+}
+
+.title h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+#edit_session_form {
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.controls input[type=text], .controls input[type=date] , .controls textarea, .controls select {
+  width:280px;
+}
+
+.controls select {
+  width: 294px;
+}
+
+.text_input {
+  float: left;
+  margin-right: 5px;
+}
+
+.upload_file {
+  position: relative;
+  width: 70px;
+  height: 30px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+#file_input_button {
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  top: 0px;
+  font-size: 12px;
+}
+
+#presentation {
+  position: absolute;
+  font-size: 35px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.write button {
+  width: 294px;
+  height: 30px;
+  margin-left: 180px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+}

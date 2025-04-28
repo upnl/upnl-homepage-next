@@ -1,0 +1,40 @@
+.container {
+  width: 970px;
+}
+
+#find_account {
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#find_account_title {
+  text-align: center;
+}
+
+#find_account_body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#find_account_announcement {
+  margin-bottom: 40px;
+  box-sizing: border-box;
+  padding: 10px;
+  background: #bcbcbc;
+}
+
+#find_account_form {
+  margin: 25px;
+}
+
+#find_account_form input {
+  width: 300px;
+}
+
+#find_account_form button {
+  width: 315px;
+  height: 50px;
+}

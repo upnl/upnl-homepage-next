@@ -1,0 +1,162 @@
+#new_project_title h3, #edit_project_title h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+#new_project_form, #edit_project_form {
+  padding: 40px 10px;
+}
+
+#new_project_form_left, #new_project_form_right {
+  padding: 10px;
+  float: left;
+}
+
+#new_project_form_right {
+  border-left: 1px solid gray;
+}
+
+#new_project_form_left .control-label {
+  width: 100px;
+}
+
+#new_project_form_left .controls {
+  margin-left: 120px;
+}
+
+#new_project_form_right .control-label {
+  width: 40px;
+}
+
+#new_project_form_right .controls {
+  margin-left: 60px;
+}
+
+#edit_project_form_left, #edit_project_form_right {
+  padding: 10px;
+  float: left;
+}
+
+#edit_project_form_right {
+  border-left: 1px solid gray;
+}
+
+#edit_project_form_left .control-label {
+  width: 100px;
+}
+
+#edit_project_form_left .controls {
+  margin-left: 120px;
+  width: 240px;
+}
+
+#edit_project_form_right .control-label {
+  width: 40px;
+}
+
+#edit_project_form_right .controls {
+  margin-left: 60px;
+}
+
+.controls input[type=text], .controls input[type=date] , .controls textarea {
+  width:230px;
+}
+
+.thumbnail {
+  width:130px;
+  height:130px;
+  margin:10px 0;
+}
+
+.thumbnail img {
+  width:auto;
+  margin:0;
+}
+
+.control-label.thumbnail_label {
+  height:130px;
+  line-height:130px;
+}
+
+#text_input {
+  float: left;
+  width: 150px;
+  margin-right: 5px;
+}
+
+#file_input_textbox {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  overflow: hidden;
+}
+
+#file_input_button {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  top: 0px;
+  font-size: 12px;
+}
+
+#thumbnail {
+  position: absolute;
+  font-size: 35px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#members {
+  width: 245px;
+}
+
+.chosen-container-multi .chosen-results {
+  max-height: 80px;
+}
+
+.write {
+}
+
+.write button {
+  width: 300px;
+  margin-left: 180px;
+  box-sizing: border-box;
+  padding: 5px 2px;
+}
+
+#edit_publicpage_form {
+  padding: 40px 10px;
+}
+
+#detail {
+  width: 400px;
+  min-height: 120px;
+}
+
+.delete-screenshot-button {
+  cursor: pointer;
+}
+
+.danger-command-wrapper {
+  margin-top: 10px;
+}
+
+p.warning {
+  background-color: red;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+#next_orderer_chosen .chosen-drop {
+  bottom: 25px;
+  top: auto !important;
+}
+
+.danger-command-wrapper button {
+  width: 70px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+}

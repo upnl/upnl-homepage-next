@@ -1,0 +1,56 @@
+#panorama-page {
+  width: 80%;
+  
+}
+
+h3 {
+  margin: 0;
+  margin-bottom:5px;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+#panorama-page table {
+  width: 100%;
+}
+
+table.list {
+  width:100%;
+}
+
+#panorama-page table th:first-child {
+  width: 60px;
+}
+
+#panorama-page table th:nth-child(2) {
+  width: 150px;
+}
+
+.list tr td {
+  border:2px solid #454545;
+}
+
+.list tr th {
+  border:2px solid #454545;
+}
+
+.list td:first-child {
+  text-align:center;
+}
+
+#pages {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 180px;
+}
+
+.page_number {
+  float: left;
+  width: 30px;
+  text-align: center;
+}
+
+.page_watched {
+  font-size: 20px;
+  font-weight: bold;
+}

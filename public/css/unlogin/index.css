@@ -1,0 +1,175 @@
+.none_thing {
+  display: none;
+}
+
+#index_html {
+  box-sizing: border-box;
+}
+
+#represent_project {
+  box-sizing: border-box;
+  height: 373px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#button_left {
+  float: left;
+  width: 40px;
+  height: 100%;
+  cursor: pointer;
+  background: url(../../img/arrow_left.png) no-repeat center;
+}
+#button_left:hover {
+  background-image: url(../../img/arrow_left_clicked.png)
+}
+
+#thumbnail_wrapper {
+  float: left;
+  box-sizing: inherit;
+  width: 528px;
+  height: 373px;
+  border: 1px solid #717171;
+  display: table;
+}
+
+#thumbnail_content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+img.thumbnail_image {
+  display: block;
+  margin: 0 auto;
+}
+
+#project_info {
+  float:left;
+  box-sizing: inherit;
+  padding: 20px;
+  width: 332px;
+  height: 373px;
+}
+
+#button_right {
+  float: left;
+  width: 40px;
+  height: 100%;
+  cursor: pointer;
+  background: url(../../img/arrow_right.png) no-repeat center;
+}
+#button_right:hover {
+  background-image: url(../../img/arrow_right_clicked.png)
+}
+
+#aboutupnl {
+  float: left;
+  width: 710px;
+  margin-left: 15px;
+}
+
+#aboutupnl .content_horizontal {
+  padding: 20px;
+}
+
+#tagcloud {
+  float: left;
+  width: 210px;
+  margin-left: 20px;
+}
+
+#tag_content {
+  height: 230px;
+}
+
+#tag_search {
+  width: 100%;
+}
+
+#tag_search_content {
+  float: left;
+  width: 65%;
+}
+
+#tag_search_button {
+  float: right;
+  width: 25%;
+  height: 30px;
+}
+
+.title_horizontal {
+  height: 26px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.title_horizontal h3 {
+  margin: 0;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+.content_horizontal {
+  height: 272px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+#workshop {
+  clear: both;
+  height: 176px;
+  margin-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.title_vertical {
+  float: left;
+  width: 33px;
+  height: inherit;
+  box-sizing: border-box;
+  margin-right: 4px;
+  padding: 5px;
+}
+
+.title_vertical h3 {
+  margin: 0;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+.content_vertical {
+  float: left;
+  width: 172px;
+  height: inherit;
+  box-sizing: border-box;
+  margin-left: 8px;
+  padding: 5px;
+}
+
+.workshop_title h4 {
+  margin: 0;
+  line-height: 14px;
+  font-size: 14px;
+}
+
+.workshop_title a {
+  font-weight: bold;
+}
+
+.workshop_datatime {
+  font-size: 9px;
+}
+
+#workshop .nano {
+  height: 75%;
+}
+
+#workshop .nano > .nano-content {
+  
+}
+
+#workshop .nano-pane > .nano-slider {
+  height: 30%;
+}

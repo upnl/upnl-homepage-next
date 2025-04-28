@@ -1,0 +1,34 @@
+#new_purchase_form {
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.controls input[type=text], .controls input[type=date] , .controls textarea {
+  width:280px;
+}
+
+.thumbnail {
+  width:130px;
+  height:130px;
+  margin:10px 0;
+}
+
+.thumbnail img {
+  width:auto;
+  margin:0;
+}
+
+.control-label.thumbnail_label {
+  height:130px;
+  line-height:130px;
+}
+
+.write {
+}
+
+.write button {
+  width: 300px;
+  margin-left: 180px;
+  box-sizing: border-box;
+  padding: 5px 2px;
+}
