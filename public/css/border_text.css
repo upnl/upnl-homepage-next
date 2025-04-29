@@ -1,0 +1,41 @@
+/* from : http://jsfiddle.net/B8VaV/1/, http://stackoverflow.com/questions/7186438/how-can-i-have-some-text-overlaying-a-border-with-css */
+.wrapper-box {
+  float:left;
+  width:100%;
+}
+
+.side-border {
+  float:left;
+  height:24px;
+  border-top: solid black 1px;
+  margin-top:25px;
+}
+
+.side-border.l {
+  float:left;
+  width:20px;
+  border-left:  solid black 1px;
+}
+
+.side-border.r {
+  float:left;
+  width:calc(99% - 220px);
+  border-right: solid black 1px;
+}
+
+.border-text {
+  float:left;
+  height:35px;
+  margin-top:15px;
+  width:200px;
+  text-align:center;
+  font-size:20px;
+}
+
+.box-content {
+  float:left;
+  width:99%;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  border-bottom: solid black 1px;
+}

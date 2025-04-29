@@ -1,0 +1,128 @@
+#board_list_content h4 {
+  float: left;
+  margin: 0;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.list_switch {
+  float: right;
+  margin-right: 10px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#working_study_list, #pending_study_list {
+  clear: both;
+}
+
+.write {
+  margin:10px 0px 10px 0px;
+  float:right;
+}
+
+table.list {
+  margin-top:5px;
+  width:100%;
+  table-layout:fixed;
+}
+
+table.list tr td:nth-of-type(1), table.list th:nth-of-type(1) {
+  width:450px;
+}
+
+.title {
+  display: block;
+  float: left;
+  max-width: 410px;
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.comment { 
+  float: left;
+}
+
+table.list tr td:nth-of-type(2), table.list th:nth-of-type(2) {
+  width:125px;
+  text-align:center;
+}
+
+table.list tr td:nth-of-type(3), table.list th:nth-of-type(3) {
+  width:80px;
+  text-align:center;
+}
+
+table.list tr td:nth-of-type(4), table.list th:nth-of-type(4) {
+}
+
+table.list tr td {
+  border-left:2px solid;
+  border-right:2px solid;
+  overflow:hidden;
+  word-wrap:break-word;
+}
+table.list tr:last-child {
+  border-bottom: 2px solid;
+}
+
+table.list tr th {
+  border:2px solid;
+}
+
+#board_top {
+}
+
+#board_top h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#board_name {
+  font-size:30px;
+  font-weight:bold;
+  min-height:30px;
+  line-height:30px;
+  overflow:hidden;
+  word-wrap:break-word;
+}
+
+#assenter {
+  padding: 0 10px;
+}
+
+#pages {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 180px;
+}
+
+.write form {
+  display: inline-block;
+  margin: 0;
+}
+
+.write button {
+  width: 45px;
+  height: 30px;
+}
+
+#write_button {
+  display: block;
+  min-width: 65px;
+  height: 30px;
+}
+
+.page_number {
+  float: left;
+  width: 30px;
+  text-align: center;
+}
+
+.page_watched {
+  font-size: 20px;
+  font-weight: bold;
+}

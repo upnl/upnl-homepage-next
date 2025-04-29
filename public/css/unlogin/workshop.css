@@ -1,0 +1,152 @@
+#workshop {
+  width: 970px;
+}
+
+#workshop_list_wrapper {
+  width: 940px;
+  margin: 0 auto 30px auto;
+  box-sizing: border-box;
+  padding: 20px 30px 20px 30px;
+}
+
+#workshop_list_wrapper h3 {
+  margin: 5px 0;
+  line-height: 21.5px;
+  font-size: 21.5px;
+}
+
+#workshop_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+  margin-top: 15px;
+}
+
+#workshop_list li {
+  margin-bottom: 5px;
+  width: 110px;
+  box-sizing: border-box;
+  border-right: 1px solid black;
+  text-align: center;
+  list-style: none;
+}
+#workshop_list li:nth-child(8n) {
+  border-right: 1px solid transparent;
+}
+
+#workshop_detail {
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+#workshop_label {
+  margin-bottom: 15px;
+  color: #FFFFFF;
+}
+
+.title_horizontal {
+  width: 200px;
+  height: 30px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.title_horizontal h3, .title_horizontal h4, .title_horizontal h5 {
+  display: inline;
+  margin: 0;
+  line-height: 14px;
+  font-size: 14px;
+}
+
+#workshop_information {
+  width: 450px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+#workshop_session_list {
+  width: 100%;
+  height: ;
+  margin: 10px 0;
+}
+
+#workshop_title {
+  line-height: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#workshop_datetime {
+  margin-left: 10px;
+}
+
+.workshop_session_list_row {
+  width: 100%;
+  height: ;
+
+}
+
+.workshop_session_title {
+  display: inline-block;
+  width: 70%;
+  margin: 0;
+  margin-bottom: 5px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.workshop_session_presenter {
+  float: right;
+}
+
+#session_detail {
+  width: 960px;
+  margin-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#session_label {
+  margin-bottom: 15px;
+}
+
+.session_information {
+  float: left;
+  width: 300px;
+  min-height: 235px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 10px 20px 50px 20px;
+}
+.session_information:nth-child(3n) {
+  margin-right: 0px;
+}
+
+.session_title {
+  margin: 0px;
+  text-align: center;
+  line-height: 17px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.session_presenter {
+  text-align: right;
+}
+
+.session_content {
+  
+}
+.session_content p {
+  white-space: pre-line;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+#placeholder {
+  height: 800px;
+}

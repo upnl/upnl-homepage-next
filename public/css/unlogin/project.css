@@ -1,0 +1,199 @@
+#project {
+  width: 970px;
+  padding-bottom: 10px;
+}
+
+#working_projects {
+  margin-left: 15px;
+}
+
+.title_horizontal {
+  width: 305px;
+  height: 30px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.title_horizontal h3 {
+  margin: 0;
+  line-height: 14px;
+  font-size: 14px;
+}
+
+#workding_projects_label {
+
+}
+
+#working_projects_detail {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.working_project {
+  float: left;
+  width: 305px;
+  min-height: 225px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px 20px 10px;
+}
+.working_project:nth-child(3) {
+  margin-right: 0px;
+}
+
+.working_project_thumbnail {
+  float: left;
+  width: 128px;
+  height: 128px;
+  margin: 0 10px 10px 10px;
+  line-height: 128px;
+  text-align: center;
+}
+
+.working_project_thumbnail img {
+  vertical-align: middle;
+}
+
+.working_project_information {
+
+}
+
+.working_project_title {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.working_project_title a {
+  color: black;
+}
+
+.working_project_genre {
+  margin: 0;
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.working_project_date {
+  text-align: left;
+  font-size: 12px;
+}
+
+.working_project_member {
+  text-align: left;
+  font-size: 12px;
+}
+
+.working_project_intro {
+  clear: both;
+}
+
+#pending_projects {
+  margin-left: 15px;
+}
+
+#pending_projects_label {
+  clear: both;
+}
+
+#pending_project_year_list {
+  clear: both;
+  width: 940px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  padding: 20px 30px 20px 30px;
+}
+
+#pending_project_year_list h3 {
+  margin: 5px 0;
+  line-height: 21.5px;
+  font-size: 21.5px;
+}
+
+#pending_project_year_list span {
+  padding: 0 10px;
+}
+
+.pending_projects_detail {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pending_project {
+  float: left;
+  width: 305px;
+  min-height: 225px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px 20px 10px;
+  overflow: auto;
+}
+.pending_project:nth-child(3n) {
+  margin-right: 0px;
+}
+
+.pending_project_thumbnail {
+  float: left;
+  width: 128px;
+  height: 128px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.pending_project_information {
+
+}
+
+.pending_project_title {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pending_project_title a {
+  color: black;
+}
+
+.pending_project_genre {
+  margin: 0;
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pending_project_date {
+  text-align: left;
+  font-size: 12px;
+}
+
+.pending_project_member {
+  text-align: left;
+  font-size: 12px;
+}
+
+.pending_project_intro {
+  clear: both;
+}
+
+#project_error {
+  width: 940px;
+  height: ;
+  margin: 20px 0 200px 0;
+  box-sizing: border-box;
+  padding: 100px 50px;
+}
+
+#project_error p {
+  font-size: 20px;
+}

@@ -1,0 +1,172 @@
+#admin {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#admin form {
+  display: inline-block;
+  margin: 0;
+}
+
+#admin button {
+  margin: 0 2px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+}
+
+#admin input, #admin textarea, #admin select {
+  margin: 2px;
+}
+
+#admin_title h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+#basic_setting .title_horizontal, #board_setting .title_horizontal, #user_setting .title_horizontal {
+  width: 220px;
+  height: 26px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+#basic_setting .title_horizontal h3, #board_setting .title_horizontal h3, #user_setting .title_horizontal h3 {
+  margin: 0;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+#basic_setting .content_horizontal, #board_setting .content_horizontal, #user_setting .content_horizontal {
+  margin-bottom: 20px;
+  background: inherit;
+  box-shadow: none;
+}
+
+#basic_setting .content_horizontal {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+#basic_setting .content_horizontal>div {
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#admin #content {
+  width: 500px;
+  max-width: 700px;
+  height: 200px;
+  max-height: 500px;
+}
+
+#add_board {
+  margin-top: 10px;
+  float: right;
+}
+
+#add_board>div {
+  display: inline;
+}
+
+#wait_user_manage {
+  margin-top: 10px;
+  float: right;
+}
+
+#special_title {
+  float: left;
+}
+
+#admin #level {
+  float: left;
+  width: 100px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.user_level_manage {
+  float: right;
+  margin-top: 10px;
+}
+
+.title {
+  height: 30px;
+  font-weight:bold;
+}
+
+.title h4 {
+  margin: 5px 0;
+}
+
+table.list {
+  margin-top:5px;
+  width:100%;
+}
+
+.checkbox {
+  width: 30px;
+}
+
+.user_name {
+  width:90px;
+}
+
+.phone {
+  width: 130px;
+}
+
+.email {
+  width: 250px;
+}
+
+.dept {
+  width: 80px;
+}
+
+.accept {
+  width:50px;
+}
+
+.change {
+  width:150px;
+}
+
+.year{
+  width:40px;
+}
+
+.level {
+  width:80px;
+}
+
+.list tr td {
+  border:2px solid;
+}
+
+.list tr th {
+  border:2px solid;
+}
+
+.list td {
+  text-align:center;
+}
+
+.list td.accept span {
+  margin:0 5px;
+}
+
+input[type=text]{
+  width:200px;
+}
+
+.change_pw input {
+  width:100px;
+}
+
+.controls textarea {
+  width:500px;
+}

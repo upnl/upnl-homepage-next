@@ -1,0 +1,224 @@
+#workshop_list_content h4 {
+  float: left;
+  margin: 0;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.list_switch {
+  float: right;
+  margin-right: 10px;
+  line-height: 30px;
+}
+
+.workshop_category {
+  cursor: pointer;
+}
+
+.workshop_element {
+  clear: both;
+}
+
+#new_workshop {
+  float: right;
+  width: 100px;
+  height: 30px;
+  margin-top: 0px;
+  margin-right: 15px;
+  padding: 1px 6px;
+  line-height: 30px;
+}
+
+#workshop_label {
+  margin: 0;
+  font-size: 20px;
+}
+
+#workshop_information {
+  width: 450px;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+#workshop_session_list {
+  width: 100%;
+  height: ;
+  margin: 10px 0;
+}
+
+#workshop_title {
+  display: inline-block;
+  margin: 0;
+  line-height: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#workshop_datetime {
+  margin-left: 10px;
+}
+
+.workshop_session_list_row {
+  width: 100%;
+  height: ;
+}
+
+.workshop_session_title {
+  display: inline-block;
+  width: 70%;
+  margin: 0;
+  margin-bottom: 5px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.workshop_session_title h5 {
+  margin: 0;
+}
+
+.workshop_session_presenter {
+  float: right;
+}
+
+#workshop_member {
+  clear: both;
+  font-size: 12px;
+}
+
+#workshop_manage {
+  clear: both;
+  float: right;
+  margin-top: 10px;
+}
+
+#session_detail {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#session_label {
+  margin-top: 15px;
+}
+
+#session_label h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.session {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 345px;
+  min-height: 235px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 10px 20px 10px 20px;
+}
+.session:nth-child(2n) {
+  margin-right: 0px;
+}
+
+.session_information {
+  min-height: 200px;
+  flex: 1;
+}
+
+.session_title {
+  margin: 0;
+  text-align: center;
+  line-height: 17px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.session_presenter {
+  text-align: right;
+}
+
+.session_tag button {
+  padding: 1px 2px;
+  font-size: 12px;
+}
+
+.tags {
+  margin: 5px 0px;
+  font-size:10px;
+}
+
+.tags span {
+  font-weight: bold;
+}
+
+.tags a {
+  color: #181818;
+}
+
+.tags .tags_link:hover {
+  color: #FFFFFF;
+  background-color: #717171;
+}
+
+.tags button {
+  padding: 1px 2px;
+  font-size: 12px;
+}
+
+form, .control-group, .control-group label, .controls, .control-group input {
+  display: inline;
+  margin: 0;
+}
+
+.control-label {
+}
+
+.controls input {
+  width: 65px;
+  height: 20px;
+  margin: 10px 0px;
+}
+
+.session_manage {
+  text-align: right;
+}
+
+.session_manage button,
+.session_manage a.button {
+  margin-bottom: 2px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 1px 2px;
+  font-size: 12px;
+}
+
+.session_manage form {
+  display: inline;
+  margin: 0;
+}
+
+.workshop_information {
+  width: 450px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.workshop_information:last-child {
+  margin-bottom: 2px;
+}
+
+.workshop_title {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.workshop_link {
+  display: inline-block;
+  width: 19.5%;
+}

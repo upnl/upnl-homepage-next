@@ -1,0 +1,68 @@
+#tag {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#top {
+  padding: 10px;
+}
+
+.tag_login {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tag_login a:hover {
+  color: #181818;
+}
+
+#about {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  overflow: hidden;
+}
+
+.tagtable {
+  margin: 15px;
+}
+
+#tag .title_horizontal {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 14px;
+}
+
+#tag .title_horizontal h3 {
+  margin: 0;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+table.list, .list2 {
+  width:100%;
+  table-layout:fixed;
+  margin-bottom: 20px;
+}
+
+table.list tr td:nth-of-type(2), .list th:nth-of-type(2), .list2 td:nth-of-type(1), .list2 th:nth-of-type(1){
+  width:350px;
+}
+
+table.list tr td:nth-of-type(3), .list th:nth-of-type(3), .list tr td:nth-of-type(4), .list th:nth-of-type(4), .list2 td:nth-of-type(2), .list2 th:nth-of-type(2), .list2 td:nth-of-type(3), .list2 th:nth-of-type(3) {
+  text-align:center;
+}
+
+table.list tr td, .list2 tr td {
+  border-left:2px solid;
+  border-right:2px solid;
+  overflow:hidden;
+  word-wrap:break-word;
+}
+
+table tr:last-child {
+  border-bottom: 2px solid;
+}

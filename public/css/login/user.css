@@ -1,0 +1,71 @@
+#user{
+  width: 90%;
+  margin: 0 auto;
+}
+
+#user_title h3 {
+  margin: 0;
+  color: #181818;
+  font-size: 20px;
+  font-weight: bold; 
+}
+
+#user_detail {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 50px;
+}
+
+#user_left {
+  float: left;
+  height: 100%;
+  margin-right: 25px;
+}
+
+#user_picture {
+  margin: 5px;
+}
+
+#user_manage_picture {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#user_right {
+  float: left;
+  height: 100%;
+}
+
+#user_right>div {
+  margin-bottom: 5px;
+}
+
+.list_title {
+  font-weight: bold;
+}
+
+#user_name h4 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#user_project {
+}
+
+#user_project ul {
+  margin-left: 10px;
+}
+ 
+#user_project li:before{
+  content: '§ ';
+}
+
+#user_project li{
+  list-style: none;
+}
+
+#user_want2say {
+  margin-top: 16px;
+  overflow: hidden;
+}

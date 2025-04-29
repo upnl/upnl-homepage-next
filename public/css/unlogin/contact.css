@@ -1,0 +1,32 @@
+.container {
+  width: 970px;
+}
+
+#contact {
+  width: 75%;
+  margin:0px auto 20px auto;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#contact_title {
+  margin-bottom: 40px;
+}
+
+#contact_form {
+  margin:0px auto;
+}
+
+#contact_form input {
+  width: 330px;
+}
+
+#contact_form textarea {
+  width: 330px;
+  height: 250px;
+}
+
+#contact_form button {
+  width: 330px;
+  height: 50px;
+}

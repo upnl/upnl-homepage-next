@@ -1,0 +1,51 @@
+#users {
+  width: 80%;
+  margin: auto;
+}
+
+#users_title {
+  margin: 0;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+#user_level span:not(.bar) {
+  cursor: pointer;
+}
+
+#user_level span.selected {
+  font-weight: bold;
+}
+
+table.list {
+  margin-top:5px;
+  width:100%;
+}
+
+.user_name {
+  width: 10%;
+}
+
+.user_phone {
+  width: 15%;
+}
+
+.user_id {
+  width: 15%;
+}
+
+.user_level {
+  width: 10%;
+}
+
+.list tr td {
+  border:2px solid #454545;
+}
+
+.list tr th {
+  border:2px solid #454545;
+}
+
+.list td {
+  text-align:center;
+}

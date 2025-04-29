@@ -1,0 +1,50 @@
+.container {
+  width: 970px;
+}
+
+#join {
+  width: 75%;
+  margin: 0 auto 30px auto;
+  padding: 20px 20px 30px 20px;
+  box-sizing: border-box;
+}
+
+#join_body {
+  margin:0 auto;
+  width:100%;
+}
+
+#join_announcement {
+  margin-bottom: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#join_note {
+  margin:0 auto;
+  width:90%;
+}
+
+#join_form {
+  margin:0 auto;
+  width:100%;
+}
+
+#join_form input {
+  width:300px;
+  height: 25px;
+}
+
+#join_form textarea {
+  width:300px;
+  height:200px;
+}
+
+#join_form button {
+  width:315px;
+  height: 50px;
+}
+
+.help-inline {
+  font-size:12px;
+}

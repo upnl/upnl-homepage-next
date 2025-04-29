@@ -1,0 +1,257 @@
+#board_list_content h4 {
+  float: left;
+  margin: 0;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.list_switch {
+  float: right;
+  margin-right: 10px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#working_study_list, #pending_study_list {
+  clear: both;
+}
+
+#view {
+  width: 100%;
+}
+
+#board_name h3 {
+  margin: 0;
+}
+
+#article {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#article_top {
+  box-sizing: border-box;
+  padding: 5px;
+  border-bottom: 1px solid #333333;
+}
+
+#article_title h3 {
+  margin:0;
+  line-height: 16pt;
+  font-size: 15.6pt;
+}
+
+#article_top_space {
+  position: relative;
+  width: 100%;
+  margin-top: 5px;
+}
+
+#article_author {
+  float:right;
+  margin-right: 10px;
+}
+
+#article_datetime {
+  float:right;
+}
+
+#article_file_list_button {
+  clear: both;
+  float: right;
+  cursor: pointer;
+}
+
+#article_file_list {
+  clear: both;
+  float: right;
+  z-index: 1;
+}
+#article_file_list.article {
+  display: none;
+  padding: 10px;
+  position: absolute;
+  top: 55px;
+  right: 5px;
+}
+
+#article_file_list li:before {
+  content: '§';
+}
+
+#article_file_list li {
+  list-style: none;
+}
+
+#moveWrapper {
+  box-sizing: border-box;
+  padding:10px;
+  margin-top:30px;
+}
+
+#thumbnails-wrapper img {
+  border: 2px solid transparent;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border 200ms linear;
+}
+
+#thumbnails-wrapper img:hover {
+  border: 2px solid blue;
+}
+
+#images {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#images li {
+  margin: 10px auto;
+}
+
+#images img {
+  max-height: 500px;
+}
+
+#article_content {
+  width: 100%;
+}
+
+#article_content a {
+  color: #00e;
+}
+
+#article_content a:hover {
+  text-decoration: underline;
+}
+
+.tags {
+  margin: 5px 0px;
+  font-size:10px;
+}
+
+.tags span {
+  font-weight: bold;
+}
+
+.tags button {
+  padding: 1px 2px;
+  font-size: 12px;
+}
+
+form, .control-group, .control-group label, .controls, .control-group input {
+  display: inline;
+  margin: 0;
+}
+
+.control-label {
+}
+
+.controls input {
+  width: 65px;
+  height: 20px;
+  margin: 10px 0px;
+}
+
+.comment {
+  margin: 10px 0px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.comment img {
+  width: 32px;
+  height: 32px;
+}
+
+.comment_content {
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.comment_date {
+  margin-left: 5px;
+}
+
+.comment button {
+  padding: 1px 2px;
+  font-size: 12px;
+}
+
+.comment:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.comment_topright {
+  float: right;
+}
+
+#add_comment {
+  margin-top: 10px;
+}
+
+#comment_input_box {
+  float: left;
+  width: 600px;
+  min-width: 600px;
+  max-width: 600px;
+  height: 50px;
+  max-height: 200px;
+}
+
+#write_comment_button {
+  float: right;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#comment_auto_newline {
+  display: inline-block;
+  clear: both;
+}
+
+#article_bottom {
+  
+}
+
+#move_to {
+  font-weight: bold;
+}
+
+#move_to>span {
+  margin: 0 5px;
+}
+
+#to_list {
+  float: right;
+}
+
+#to_next {
+  float: right;
+}
+
+#to_prev {
+  float: right;
+}
+
+#to_next_span {
+  float: right;
+}
+
+#to_prev_span {
+  float: right;
+}
+
+#article_manage button,
+#article_manage a.button {
+  margin-bottom: 2px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding: 5px 10px;
+}

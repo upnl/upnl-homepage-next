@@ -1,0 +1,46 @@
+#menu_project a {
+  color:red;
+}
+
+.session {
+  width:450px;
+  min-height:160px;
+  float:left;
+  border:1px solid;
+  padding:20px;
+  margin:20px;
+}
+
+.session_info {
+  margin-left:150px;
+  width:300px;
+}
+
+.session_title {
+  font-size:25px;
+  font-weight:bold;
+  text-align:center;
+  min-height:20px;
+  width:100%;
+  margin-bottom:10px;
+  overflow:hidden;
+  word-wrap:break-word;
+}
+
+.session_presenter {
+  font-size:15px;
+  font-weight:bold;
+  text-align:center;
+  min-height:20px;
+  width:90%;
+  margin:0 auto;
+  overflow:hidden;
+  word-wrap:break-word;
+}
+
+.session_about {
+  font-size:15px;
+  min-height:60px;
+  width:100%;
+  margin-bottom:10px;
+}

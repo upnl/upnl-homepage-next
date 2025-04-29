@@ -1,0 +1,104 @@
+.container {
+  width: 970px;
+}
+
+#login_title{
+  width: 520px;
+  margin: 190px auto 10px auto;
+}
+
+#login_title h2, #login_title h3 {
+  line-height: 30px;
+  font-weight: normal;
+}
+
+#upnl {
+  float: left;
+  margin: 0;
+  color: #FFFFFF;
+  line-height: 30px;
+  font-size: 30px;
+}
+
+#openyourdream {
+  margin: 0;
+  color: #FFFFFF;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+#login {
+  clear: both;
+  margin: 0px auto 390px auto;
+  width: 520px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#login_form {
+  
+}
+
+#login_form  .control-group {
+  width: 330px;
+  margin-bottom: 20px;
+}
+
+#login_form  .controls {
+  float: left;
+  margin-left: 0px;
+}
+
+#login_form  .controls input {
+  width: 330px;
+  height: 30px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#login_left {
+  float: left;
+  width: 360px
+}
+
+#login_right {
+  float: right;
+}
+
+#login_right button {
+  width: 100px;
+  height: 100px;
+}
+
+#login_bottom {
+  clear: both;
+}
+
+#login_bottom_left {
+  float: left;
+}
+
+#autologin_wrapper {
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+#autologin_wrapper label {
+  margin-bottom: 0px;
+}
+
+#autologin_wrapper span {
+  margin-bottom: 0px;
+}
+
+#login_bottom_right {
+  float: right;
+}
+
+#is_lost_wrapper {
+  height: 20px;
+  margin: 0px;
+}
+
+#is_lost_wrapper span {
+  margin: 0px;
+}

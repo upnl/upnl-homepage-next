@@ -1,0 +1,21 @@
+.backboard {
+  padding-bottom: 5px;
+}
+
+.bylaw-container {
+  padding: 10px 30px;
+  margin: 0 auto;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+#bylaw-link {
+  text-align: center;
+  margin: 20px auto;
+  margin-top: 0;
+}
+
+#bylaw-link a {
+  font-weight: bolder;
+  font-size: 120%;
+}

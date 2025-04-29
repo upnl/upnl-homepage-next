@@ -1,0 +1,115 @@
+*, span, a, button, input, textarea, div {
+  font-family: "나눔고딕", "NanumGothic", "맑은 고딕", "Malgun Gothic", "돋움", "Dotum", "애플고딕", "AppleGothic", "sans-serif";
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #181818;
+}
+
+#body {
+  width: 970px;
+  margin: 0 auto;
+}
+
+.default {
+  margin:0px 0px 0px 0px;
+}
+
+#club_title {
+  display: none;
+}
+
+.form {
+  float: left;
+  width: 45%;
+  margin: 10px;
+  border: 2px solid;
+}
+
+.layout_right {
+  float: right;
+}
+
+#logo {
+  float: left;
+  width: 400px;
+  margin-top: 16px;
+  margin-left: 24px;
+}
+
+#top_menu {
+  float: right;
+  height: 14px;
+  margin-top: 9px;
+  margin-left: 400px;
+  margin-right: 25px;
+  text-align: right;
+  line-height: 14px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#top_menu span {
+  padding: 0px 4px 0px 4px;
+}
+
+#category {
+  clear: both;
+  float: right;
+  margin: 0;
+  margin-right: 60px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.category_content {
+  float: left;
+  width: 110px;
+  height: 36px;
+  padding: 5px;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+.category_content span {
+  margin-top: 8px;
+}
+
+#content_line {
+  clear: both;
+  width: 970px;
+  height: 30px;
+}
+
+#content_line span {
+  padding: 0px 6px 0px 6px;
+}
+
+#line_various {
+  float: left;
+  margin-left: 450px;
+  display: none;
+  line-height: 30px;
+}
+
+#bottom_menu {
+  clear: both;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#bottom_menu span {
+  padding: 0px 6px 0px 6px;
+}

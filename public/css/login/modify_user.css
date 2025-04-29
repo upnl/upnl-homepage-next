@@ -1,0 +1,60 @@
+#modify_user {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#modify_user_title h3{
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#modify_user_form {
+  box-sizing: border-box;
+  padding: 40px 20px;
+}
+
+#modify_user_form_left {
+  float: left;
+  margin-left: 50px;
+}
+
+.control-group .control-label {
+  font-weight: bold;
+}
+
+.controls input[type=text], .controls input[type=password], .controls textarea {
+  width: 300px;
+}
+
+.controls select {
+  width: 314px;
+}
+
+#modify_user_form_right {
+  float: left;
+  margin-top: 150px;
+}
+
+#modify_user_form_right .control-group .control-label {
+  width: 30px;
+}
+
+#modify_user_form_right .control-group .controls {
+  margin-left: 50px;
+}
+
+.write {
+  clear: both;
+}
+
+.write button {
+  margin-left: 230px;
+  width: 315px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.help-inline {
+  font-size:12px;
+}
