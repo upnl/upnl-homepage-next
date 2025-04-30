@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getServerSession } from "next-auth";
+import SessionProvider from "./SessionProvider";
 import "./globals.css";
 import "@/public/css/nanoscroller.css";
 
@@ -11,6 +13,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession();
+
   return (
     <html>
       <head>
@@ -23,7 +27,9 @@ export default async function RootLayout({
           charSet="UTF-8"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SessionProvider session={session}>{children}</SessionProvider>
+      </body>
     </html>
   );
 }
