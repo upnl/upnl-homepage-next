@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import "./nanoscroller.css";
 import "./default.css";
 
