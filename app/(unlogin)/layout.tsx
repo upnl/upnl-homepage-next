@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import "@/public/css/unlogin/layout.css";
-import "@/public/css/theme/default.css";
+import "./layout.css";
 
 export default async function UnloginLayout({
   children,

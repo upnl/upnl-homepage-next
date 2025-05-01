@@ -1,5 +1,5 @@
 import LoginForm from "./LoginForm";
-import "@/public/css/unlogin/login.css";
+import "./login.css";
 
 export default async function Login() {
   return (

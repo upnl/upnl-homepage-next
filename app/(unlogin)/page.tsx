@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import "@/public/css/unlogin/index.css";
+import "./index.css";
 
 // from date.strftime('%Y.%m.%d')
 // TODO: use dayjs

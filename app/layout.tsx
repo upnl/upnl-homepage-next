@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "@/public/css/nanoscroller.css";
+import "./nanoscroller.css";
+import "./default.css";
 
 export const metadata: Metadata = {
   title: "UPnL Homepage",
