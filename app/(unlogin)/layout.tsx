@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import "./layout.css";
+import logo from "@/public/images/upnl.png";
 
 export default async function UnloginLayout({
   children,
@@ -30,12 +31,7 @@ export default async function UnloginLayout({
         </div>
         <div id="logo" className="img">
           <Link href="/">
-            <Image
-              src="/images/upnl.png"
-              width={158}
-              height={49}
-              alt="images/upnl.png"
-            />
+            <Image src={logo} width={158} height={49} alt="images/upnl.png" />
           </Link>
         </div>
         <ul id="category">
