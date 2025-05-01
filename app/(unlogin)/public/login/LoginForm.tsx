@@ -26,12 +26,12 @@ export default function LoginForm() {
               type="text"
               name="id"
               id="id"
+              autoFocus
               placeholder="아이디"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
             />
           </div>
-          <script>document.getElementById("id").focus();</script>
         </div>
         <div className="control-group">
           <div className="controls">
