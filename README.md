@@ -11,7 +11,7 @@ cd upnl-homepage-next
 docker-compose up -d
 
 # Prisma Migration 적용
-DATABASE_URL="mysql://root:rootpassword@localhost:3306/upnl_db" npx prisma migrate dev
+DATABASE_URL="mysql://upnl:password@localhost:3306/upnl_db" npx prisma migrate deploy
 ```
 
 ## DB schema 수정 (Prisma migrate 사용)
