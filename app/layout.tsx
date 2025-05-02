@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./bootstrap.min.css";
 import "./nanoscroller.css";
 import "./default.css";
 
@@ -13,16 +14,6 @@ export default async function RootLayout({
 }>) {
   return (
     <html>
-      <head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="/css/bootstrap.min.css"
-          media="screen"
-          title="homepage"
-          charSet="UTF-8"
-        />
-      </head>
       <body>{children}</body>
     </html>
   );
