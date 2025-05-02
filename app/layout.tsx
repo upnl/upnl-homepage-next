@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./bootstrap.min.css";
+import "./bootstrap.css";
 import "./nanoscroller.css";
 import "./default.css";
 
