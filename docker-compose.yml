@@ -22,6 +22,6 @@ services:
     volumes:
       - .:/workspace
     working_dir: /workspace
-    command: ["yarn", "dev"]
+    command: ["sh", "-c", "yarn global add pnpm && pnpm install && pnpm dev"]
     ports:
       - 3000:3000
