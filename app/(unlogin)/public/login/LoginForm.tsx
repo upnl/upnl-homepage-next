@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 export default function LoginForm() {
   const [userId, setUserId] = useState("");
@@ -9,7 +10,16 @@ export default function LoginForm() {
   const [autoLogin, setAutoLogin] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
-    // TODO: login logic
+    e.preventDefault();
+    const result = await signIn("upnl-credential", {
+      user_id: userId,
+      password: password,
+      callbackUrl: "/main",
+    });
+
+    if (result?.error) {
+      alert(result.error);
+    }
   }
 
   return (
