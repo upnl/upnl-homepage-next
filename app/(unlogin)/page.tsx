@@ -79,6 +79,7 @@ export default async function Index() {
               ))}
             </div>
           </div>
+          {/* TODO: extract to client component */}
           <div id="tag_search" className="search">
             <input id="tag_search_content" type="text" />
             <button id="tag_search_button">검색</button>
