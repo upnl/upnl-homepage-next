@@ -16,7 +16,7 @@ function formatDate(date: Date) {
 
 export default async function Index() {
   // TODO: get data from database
-  const main_content = <></>;
+  const mainContent = null;
   const tags = [
     { no: 1, content: "tag1" },
     { no: 2, content: "tag2" },
@@ -25,7 +25,7 @@ export default async function Index() {
     {
       no: 0,
       nth: 21,
-      start_date: new Date(),
+      start_date: new Date("2025-01-01T00:00:00"),
       sessions: [
         { no: 45, public_level: true, title: "sample session title1" },
         { no: 46, public_level: true, title: "sample session title2" },
@@ -62,7 +62,7 @@ export default async function Index() {
         <div className="title_horizontal">
           <h3>About UPnL</h3>
         </div>
-        <div className="content_horizontal">{main_content}</div>
+        <div className="content_horizontal">{mainContent}</div>
       </div>
       <div id="tagcloud">
         <div className="title_horizontal">
