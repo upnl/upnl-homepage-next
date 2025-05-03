@@ -7,7 +7,7 @@ import { signIn } from "next-auth/react";
 export default function LoginForm() {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
-  const [autoLogin, setAutoLogin] = useState(false);
+  const [autoLogin, setAutoLogin] = useState(true);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -66,6 +66,7 @@ export default function LoginForm() {
                 type="checkbox"
                 name="autologin"
                 checked={autoLogin}
+                disabled
                 onChange={(e) => setAutoLogin(e.target.checked)}
               />{" "}
               자동 로그인
