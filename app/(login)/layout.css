@@ -355,3 +355,9 @@ a:visited {
   display: inline-block;
   text-align: center;
 }
+
+.bar_separated:not(:first-child)::before {
+  content: " | ";
+  margin: 1px;
+  opacity: 0.5;
+}
