@@ -2,14 +2,24 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 export default function LoginForm() {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
-  const [autoLogin, setAutoLogin] = useState(false);
+  const [autoLogin, setAutoLogin] = useState(true);
 
   async function handleSubmit(e: React.FormEvent) {
-    // TODO: login logic
+    e.preventDefault();
+    const result = await signIn("upnl-credential", {
+      user_id: userId,
+      password: password,
+      callbackUrl: "/main",
+    });
+
+    if (result?.error) {
+      alert(result.error);
+    }
   }
 
   return (
@@ -56,6 +66,7 @@ export default function LoginForm() {
                 type="checkbox"
                 name="autologin"
                 checked={autoLogin}
+                disabled
                 onChange={(e) => setAutoLogin(e.target.checked)}
               />{" "}
               자동 로그인
