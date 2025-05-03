@@ -43,6 +43,7 @@ function isNew(date: Date) {
 }
 
 export default async function LoginIndex() {
+  // TODO: fetch data from database
   const articles_notice = [
     {
       no: 1,

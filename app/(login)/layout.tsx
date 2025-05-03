@@ -5,6 +5,7 @@ import logo from "@/public/images/upnl.png";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import CategoryMenu from "./CategoryMenu";
+import LogoutButton from "./LogoutButton";
 
 // from date.strftime('%Y/%m/%d %H:%M')
 // TODO: use dayjs
@@ -55,18 +56,14 @@ export default async function LoginLayout({
         <div id="top_menu" className="dark">
           <div id="menu_menu">
             {user.id == "admin" && (
-              <>
-                <span>
-                  <Link href="/admin">관리자 페이지</Link>
-                </span>
-                <span className="bar">|</span>
-              </>
+              <span className="bar_separated">
+                <Link href="/admin">관리자 페이지</Link>
+              </span>
             )}
-            <span>
-              <Link href="/logout">로그아웃</Link>
+            <span className="bar_separated">
+              <LogoutButton />
             </span>
-            <span className="bar">|</span>
-            <span>
+            <span className="bar_separated">
               <Link href={`/modify_user/${user.no}`}>정보 변경</Link>
             </span>
           </div>
