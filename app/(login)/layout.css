@@ -1,5 +1,13 @@
-*, span, a, button, input, textarea, div {
-  font-family: "나눔고딕", "NanumGothic", "맑은 고딕", "Malgun Gothic", "돋움", "Dotum", "애플고딕", "AppleGothic", "sans-serif";
+*,
+span,
+a,
+button,
+input,
+textarea,
+div {
+  font-family:
+    "나눔고딕", "NanumGothic", "맑은 고딕", "Malgun Gothic", "돋움", "Dotum",
+    "애플고딕", "AppleGothic", "sans-serif";
 }
 
 a {
@@ -64,17 +72,17 @@ a:visited {
 }
 
 #menu_user_gravatar {
-  width:32px;
-  height:32px;
-  float:left;
-  margin-right:10px;
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin-right: 10px;
 }
 
 #menu_username {
-  float:left;
-  width:150px;
-  height:32px;
-  line-height:32px;
+  float: left;
+  width: 150px;
+  height: 32px;
+  line-height: 32px;
   text-align: left;
 }
 
@@ -109,12 +117,8 @@ a:visited {
   overflow: hidden;
 }
 
-#content_line span {
-  padding: 0px 6px;
-}
-
-#nav_button_left, #nav_button_right {
-  display: none;
+#nav_button_left,
+#nav_button_right {
   position: absolute;
   top: 5px;
   width: 30px;
@@ -141,7 +145,7 @@ a:visited {
   min-height: inherit;
   margin-right: 45px;
   margin-left: 45px;
-  display: none;
+  /* display: none; */
   line-height: 32px;
   white-space: nowrap;
   overflow: scroll;
@@ -187,7 +191,10 @@ a:visited {
   list-style-type: none;
 }
 
-#board_list, #workshop_list, #tagcloud, #promotion_board_list {
+#board_list,
+#workshop_list,
+#tagcloud,
+#promotion_board_list {
   margin-bottom: 20px;
 }
 
@@ -326,7 +333,7 @@ a:visited {
   text-align: center;
 }
 
-.search input[type=text] {
+.search input[type="text"] {
   width: 100%;
 }
 
@@ -338,16 +345,12 @@ a:visited {
   text-align: center;
 }
 
-#bottom_menu span {
-  padding: 0px 6px;
-}
-
 .about-commit {
   margin-top: 15px;
   text-align: right;
 }
 
-.is_new{
+.is_new {
   float: left;
 }
 
