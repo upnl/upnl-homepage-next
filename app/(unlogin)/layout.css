@@ -1,5 +1,13 @@
-*, span, a, button, input, textarea, div {
-  font-family: "나눔고딕", "NanumGothic", "맑은 고딕", "Malgun Gothic", "돋움", "Dotum", "애플고딕", "AppleGothic", "sans-serif";
+*,
+span,
+a,
+button,
+input,
+textarea,
+div {
+  font-family:
+    "나눔고딕", "NanumGothic", "맑은 고딕", "Malgun Gothic", "돋움", "Dotum",
+    "애플고딕", "AppleGothic", "sans-serif";
 }
 
 a {
@@ -20,7 +28,7 @@ a:visited {
 }
 
 .default {
-  margin:0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
 #club_title {

@@ -2,12 +2,13 @@
   width: 970px;
 }
 
-#login_title{
+#login_title {
   width: 520px;
   margin: 190px auto 10px auto;
 }
 
-#login_title h2, #login_title h3 {
+#login_title h2,
+#login_title h3 {
   line-height: 30px;
   font-weight: normal;
 }
@@ -15,14 +16,14 @@
 #upnl {
   float: left;
   margin: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 30px;
   font-size: 30px;
 }
 
 #openyourdream {
   margin: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 30px;
   font-size: 20px;
 }
@@ -36,28 +37,27 @@
 }
 
 #login_form {
-  
 }
 
-#login_form  .control-group {
+#login_form .control-group {
   width: 330px;
   margin-bottom: 20px;
 }
 
-#login_form  .controls {
+#login_form .controls {
   float: left;
   margin-left: 0px;
 }
 
-#login_form  .controls input {
+#login_form .controls input {
   width: 330px;
   height: 30px;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #login_left {
   float: left;
-  width: 360px
+  width: 360px;
 }
 
 #login_right {

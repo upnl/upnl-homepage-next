@@ -105,7 +105,7 @@
   white-space: nowrap;
 }
 
-.purchase_row>span {
+.purchase_row > span {
   margin-left: 10px;
 }
 
@@ -125,7 +125,7 @@
   line-height: 30px;
 }
 
-.promote_row>span {
+.promote_row > span {
   margin-left: 10px;
 }
 
@@ -149,7 +149,7 @@
 }
 
 #main_users_activities .content_horizontal {
-  width: ;
+  width:;
   height: 285px;
   box-sizing: border-box;
   padding: 5px;
@@ -167,7 +167,6 @@
   margin: 0;
   line-height: 18px;
   font-size: 16px;
-
 }
 
 .project_row_content {
