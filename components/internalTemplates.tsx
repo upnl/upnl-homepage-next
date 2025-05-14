@@ -35,11 +35,7 @@ export function Container({ children }: { children: React.ReactNode }) {
 }
 
 export function Main({ children }: { children: React.ReactNode }) {
-  return (
-    <div id="main_contents">
-      {children}
-    </div>
-  );
+  return <div id="main_contents">{children}</div>;
 }
 
 export function MainAlone({ children }: { children: React.ReactNode }) {
@@ -51,45 +47,7 @@ export function MainAlone({ children }: { children: React.ReactNode }) {
 }
 
 export function SideBar({ children }: { children: React.ReactNode }) {
-  return (
-    <div id="sidebar">
-      {children}
-    </div>
-  );
-}
-
-export async function TagCloud() {
-  // TODO: fetch allTagList from database
-  const allTagList = [
-    { no: 1, content: "tag1", count: 5 },
-    { no: 2, content: "tag2", count: 10 },
-  ];
-  const tagLevel = (_count: number) => "";
-  return (
-    <div id="tagcloud">
-      <div className="title_horizontal">
-        <h3>태그</h3>
-      </div>
-      <div className="content_horizontal">
-        <div id="tag_contents" className="nano">
-          <div className="nano-content">
-            {allTagList.map((tag) => (
-              <span className="bar_separated" key={tag.no}>
-                <a className={tagLevel(tag.count)} href={`/tag/${tag.no}`}>
-                  {tag.content}
-                </a>
-              </span>
-            ))}
-          </div>
-        </div>
-        <div id="tag_search" className="search">
-          <input id="tag_search_content" type="text"/>
-          <button id="tag_search_button">검색</button>
-        </div>
-        <div style={{clear: "both"}}></div>
-      </div>
-    </div>
-  );
+  return <div id="sidebar">{children}</div>;
 }
 
 // from date.strftime('%Y/%m/%d %H:%M')
@@ -97,17 +55,16 @@ export async function TagCloud() {
 function formatDate(date: Date) {
   return (
     date.getFullYear() +
-      "/" +
-      String(date.getMonth() + 1).padStart(2, "0") +
-      "/" +
-      String(date.getDate()).padStart(2, "0") +
-      " " +
-      String(date.getHours()).padStart(2, "0") +
-      ":" +
-      String(date.getMinutes()).padStart(2, "0")
+    "/" +
+    String(date.getMonth() + 1).padStart(2, "0") +
+    "/" +
+    String(date.getDate()).padStart(2, "0") +
+    " " +
+    String(date.getHours()).padStart(2, "0") +
+    ":" +
+    String(date.getMinutes()).padStart(2, "0")
   );
 }
-
 
 export async function Panorama() {
   // TODO: fetch panoramaList from database
@@ -115,7 +72,10 @@ export async function Panorama() {
     {
       action: { value: "new-article" },
       article: {
-        no: 1, title: "Test Article", bbs_name: "자유게시판", bbs_url: "2",
+        no: 1,
+        title: "Test Article",
+        bbs_name: "자유게시판",
+        bbs_url: "2",
         user: { no: 1, name: "Admin" },
       },
       actor: { no: 1, name: "Admin", email: "admin@example.com" },
@@ -124,14 +84,18 @@ export async function Panorama() {
     {
       action: { value: "new-comment" },
       article: {
-        no: 1, title: "Test Article", bbs_name: "자유게시판", bbs_url: "2",
+        no: 1,
+        title: "Test Article",
+        bbs_name: "자유게시판",
+        bbs_url: "2",
         user: { no: 1, name: "Admin" },
       },
       actor: { no: 1, name: "Admin", email: "admin@example.com" },
       date: new Date(),
     },
   ];
-  const makeGravatarUrl = (_email: string, _size: number) => "https://example.com";
+  const makeGravatarUrl = (_email: string, _size: number) =>
+    "https://example.com";
   const prettyDate = (date: Date) => formatDate(date);
   return (
     <>
@@ -143,41 +107,51 @@ export async function Panorama() {
         <div id="panorama_content" className="content_horizontal">
           <div id="panorama_nano" className="nano">
             <div id="panorama_nano_content" className="nano-content">
-              {panoramaList.map((panorama, index) => (
-                panorama.article === null ?
+              {panoramaList.map((panorama, index) =>
+                panorama.article === null ? (
                   <div className="panorama_row article" key={index}>
                     <span>삭제된 게시글입니다.</span>
                   </div>
-                  :
+                ) : (
                   <div className="panorama_row article" key={index}>
-                    <img src={makeGravatarUrl(panorama.actor.email, 32)} height="32px" />
+                    <img
+                      src={makeGravatarUrl(panorama.actor.email, 32)}
+                      height="32px"
+                    />
                     <div className="panorama-row-content">
                       <Link href={`/${panorama.article.no}`}>
-                        {panorama.action.value === "new-article" ?
-                          `${panorama.actor.name} 님의 글 [${panorama.article.title}]이(가) 등록되었습니다.` :
-                          panorama.action.value === "new-comment" ?
-                          `${panorama.actor.name} 님이 글 [${panorama.article.title}]에 댓글을 다셨습니다.` :
-                          null
-                        }
+                        {panorama.action.value === "new-article"
+                          ? `${panorama.actor.name} 님의 글 [${panorama.article.title}]이(가) 등록되었습니다.`
+                          : panorama.action.value === "new-comment"
+                            ? `${panorama.actor.name} 님이 글 [${panorama.article.title}]에 댓글을 다셨습니다.`
+                            : null}
                       </Link>
                       /
-                      {panorama.article.bbs_name === "지름게시판" ?
-                        (<>
+                      {panorama.article.bbs_name === "지름게시판" ? (
+                        <>
                           <Link href="/purchases" className="panorama_board">
                             {panorama.article.bbs_name}
                           </Link>
                           <br />
-                        </>) :
-                          (<Link href={`/board/${panorama.article.bbs_url}`} className="panorama_board">
-                            {panorama.article.bbs_name}
-                          </Link>)
-                      }
-                      <span title={formatDate(panorama.date)} className="datatime">
+                        </>
+                      ) : (
+                        <Link
+                          href={`/board/${panorama.article.bbs_url}`}
+                          className="panorama_board"
+                        >
+                          {panorama.article.bbs_name}
+                        </Link>
+                      )}
+                      <span
+                        title={formatDate(panorama.date)}
+                        className="datatime"
+                      >
                         ({prettyDate(panorama.date)})
                       </span>
                     </div>
                   </div>
-              ))}
+                ),
+              )}
             </div>
           </div>
         </div>

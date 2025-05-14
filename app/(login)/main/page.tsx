@@ -1,9 +1,4 @@
-import {
-  Container,
-  MainAlone,
-  Panorama,
-  TagCloud,
-} from "@/components/internalTemplates";
+import { Container, MainAlone, Panorama } from "@/components/internalTemplates";
 import Link from "next/link";
 import "@/public/css/border_text.css";
 import "./page.css";
@@ -131,6 +126,11 @@ export default async function LoginIndex() {
       ],
     },
   ];
+  const allTagList = [
+    { no: 1, content: "tag1", count: 5 },
+    { no: 2, content: "tag2", count: 10 },
+  ];
+  const tagLevel = (_count: number) => "";
   const required = 5;
   return (
     <Container>
@@ -279,7 +279,32 @@ export default async function LoginIndex() {
             </div>
           </div>
         </div>
-        <TagCloud />
+        <div id="tagcloud">
+          <div className="title_horizontal">
+            <h3>태그</h3>
+          </div>
+          <div className="content_horizontal">
+            <div id="tag_contents" className="nano">
+              <div className="nano-content">
+                {allTagList.map((tag) => (
+                  <span className="bar_separated" key={tag.no}>
+                    <Link
+                      className={tagLevel(tag.count)}
+                      href={`/tag/${tag.no}`}
+                    >
+                      {tag.content}
+                    </Link>
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div id="tag_search" className="search">
+              <input id="tag_search_content" type="text" />
+              <button id="tag_search_button">검색</button>
+            </div>
+            <div style={{ clear: "both" }}></div>
+          </div>
+        </div>
         <div id="workshop">
           <div className="title_vertical">
             <h3>워크샵</h3>

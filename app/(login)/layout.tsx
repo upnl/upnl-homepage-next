@@ -111,7 +111,7 @@ export default async function LoginLayout({
           <Link href="/andromeda">안드로메다</Link>
         </span>
         <span className="bar_separated">
-          <Link href="/public/bylaw">UPnL 회칙</Link>
+          <Link href="/bylaw">UPnL 회칙</Link>
         </span>
         <span className="bar_separated">
           <Link href="/recent.atom">Atom</Link>
