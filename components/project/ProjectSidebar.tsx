@@ -18,7 +18,7 @@ export default function ProjectSide({ projects }: ProjectSidebarProps) {
       <div id="board_list_content" className="content_horizontal">
         <ul>
           {projects.map((project) => {
-            const isNew = project.status === 'working' || new Date(project.finish_date).getFullYear() === new Date().getFullYear()
+            const isNew = project.status === 'working' || new Date(project.start_date).getFullYear() === new Date().getFullYear()
 
             return (
               <li key={project.bbs_url}>
