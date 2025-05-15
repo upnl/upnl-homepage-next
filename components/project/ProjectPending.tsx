@@ -39,10 +39,10 @@ export default function ProjectPending({ yearList, projects }: ProjectPendingPro
 
   useEffect(() => {
     const filtered = projects.filter(
-      (p) => new Date(p.finish_date).getFullYear() === selectedYear
-    )
-    setFilteredProjects(filtered)
-  }, [selectedYear, projects])
+      (p) => p.finish_date && new Date(p.finish_date).getFullYear() === selectedYear
+    );
+    setFilteredProjects(filtered);
+  }, [selectedYear, projects]);
 
   return (
     <div id="pending_projects">
