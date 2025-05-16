@@ -21,10 +21,11 @@
 
 // Components
 import ProjectCard from './ProjectCard'
+import { GridBox, GridBoxTitle, GridBoxContent } from '@/components/commons'
 // React
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Fragment } from 'react'
 // Styles
-import "./project.css";
+import "@/styles/components/project/project-pending.css";
 // Types
 import { Project } from '@/types/project'
 
@@ -45,36 +46,31 @@ export default function ProjectPending({ yearList, projects }: ProjectPendingPro
   }, [selectedYear, projects]);
 
   return (
-    <div id="pending_projects">
-      <div id="pending_projects_label">
-        <h3>완료된 프로젝트</h3>
-      </div>
+    <GridBox id="pending-project">
+      <GridBoxTitle content="완료된 프로젝트" />
 
       {/* 연도 선택 */}
-      <div id="pending_project_year_list" className="article light">
-        {yearList.map((year) => (
-          <button
-            key={year}
-            onClick={() => setSelectedYear(year)}
-            className={`text-sm px-2 py-1 rounded ${
-              year === selectedYear ? 'bg-blue-600 text-white' : 'text-blue-600 hover:underline'
-            }`}
-          >
-            {year}년
-          </button>
+      <div className="project-year-list article">
+        <h3 className="project-year-list__title">완료 프로젝트 목록</h3>
+        {yearList.map((year, idx) => (
+          <Fragment key={year}>
+            {idx > 0 && <span className="project-year-list__seperator"> | </span>}
+            <a onClick={() => setSelectedYear(year)} className="project-year-list__year">
+              {year}년
+            </a>
+          </Fragment>
         ))}
       </div>
 
       {/* 프로젝트 목록 */}
       {filteredProjects.length > 0 ? (
-        <div id="pending_projects_detail" className="container">
-          {filteredProjects.map((p) => (
-            <ProjectCard key={p.no} project={p} />
-          ))}
-        </div>
+        <GridBoxContent>
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.no} project={project} /> ))}
+        </GridBoxContent>
       ) : (
         <p className="projects__notice-empty">해당 연도에 완료된 프로젝트가 없습니다.</p>
       )}
-    </div>
+    </GridBox>
   )
 }

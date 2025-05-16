@@ -2,29 +2,25 @@
 
 // Components
 import ProjectCard from './ProjectCard'
-// Next
-import Link from 'next/link'
-// Styles
-import "./project.css";
+import { GridBox, GridBoxTitle, GridBoxContent } from '@/components/commons'
 // Types
 import { Project } from '@/types/project'
 
 type ProjectWorkinProps = {
   projects: Project[]
+  isPublic?: boolean
 }
 
-export default function ProjectWorkin({ projects: workingProjects }: ProjectWorkinProps) {
+export default function ProjectWorkin({ projects, isPublic = false }: ProjectWorkinProps) {
+  const filteredProjects = isPublic ? projects.filter(project => project.is_public) : projects
   return (
-    <section className="projects">
-      <Link id="new_project" className="button" href="/new_project"> 새 프로젝트 </Link>
-      <div id="working_projects_label">
-        <h3>진행중인 프로젝트</h3>
-      </div>
-      <div id="projects-grid">
-        {workingProjects.map((project) => (
+    <GridBox id="working-project">
+      <GridBoxTitle content="진행중인 프로젝트" button={isPublic ? undefined : { href: "/new_project", text: "새 프로젝트" }} />
+      <GridBoxContent>
+        {filteredProjects.map((project) => (
           <ProjectCard key={project.no} project={project} />
         ))}
-      </div>
-    </section>
+      </GridBoxContent>
+    </GridBox>
   )
 }
