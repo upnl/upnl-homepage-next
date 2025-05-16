@@ -1,0 +1,47 @@
+/* @/styles/components/commons.css */
+
+.sidebox {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sidebox__content {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+#tag_contents {
+  min-height: 0;
+  height: 210px;
+}
+
+.sidebox__title {
+  background-color: #454545;
+  box-shadow: 1px 1px 1px black;
+  font-weight: bold;
+  
+  height: 30px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.sidebox__titletext {
+  color: #ffffff;
+  margin: 0;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+.sidebox__content {
+  background-color: #a3a3a3;
+  box-shadow: 1px 1px 1px black;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.sidebox__content ul { margin: 0; }
+.sidebox__content li {
+  font-weight: bold;
+  list-style-type: none;
+}

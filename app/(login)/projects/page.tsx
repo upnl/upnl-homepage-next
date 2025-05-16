@@ -1,14 +1,13 @@
 // @/app/(login)/projects/page.tsx
 
 // Components
+import { Container, SideBar, Main } from '@/components/internalTemplates'
 import TagCloud from './TagCloud'
 import ProjectSide from '@/components/project/ProjectSidebar'
 import ProjectWorkin from '@/components/project/ProjectWorkin'
 import ProjectPending from '@/components/project/ProjectPending'
 // Utils
 import { getProjectsDataSuite, getTagData } from '@/utils/database/project'
-// Styles (temp)
-import "./layout.css";
 
 export default async function ProjectPage() {
   const {
@@ -21,23 +20,18 @@ export default async function ProjectPage() {
   } = await getTagData();
 
   return (
-    <div id="middle" className="container backboard">
+    <Container>
       {/* Sidebar at left */}
-      <div id="sidebar">
+      <SideBar>
         <ProjectSide projects={workingProjects} />
         <TagCloud tags={tagList} />
-      </div>
+      </SideBar>
 
       {/* Center-Right Section */}
-      <div id="main_contents">
-        <ProjectWorkin
-          projects={workingProjects}
-        />
-        <ProjectPending 
-          projects={pendingProjects}
-          yearList={yearList}
-        />
-      </div>
-    </div>
+      <Main>
+        <ProjectWorkin projects={workingProjects} />
+        <ProjectPending projects={pendingProjects} yearList={yearList} />
+      </Main>
+    </Container>
   )
 }

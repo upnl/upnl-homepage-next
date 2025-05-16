@@ -1,43 +1,42 @@
 // components/TagCloud.tsx
 
+// Components
+import { SideBox, SideBoxTitle, SideBoxContent } from '@/components/commons'
+// Styles
+import '@/styles/login/projects/tagcloud.css'
 // Types
 import { Tag } from '@/types/project'
 
-type TagCloudProps = {
-  tags: Tag[]
-}
-
 function tagLevel(count: number): string {
-  if (count > 10) return 'tag-xl'
-  if (count > 5) return 'tag-lg'
-  if (count > 2) return 'tag-md'
-  return 'tag-sm'
+  if (count > 10) return 'tag-contents__tag--xl'
+  if (count > 5) return 'tag-contents__tag--lg'
+  if (count > 2) return 'tag-contents__tag--md'
+  return 'tag-contents__tag--sm'
 }
 
+type TagCloudProps = { tags: Tag[] }
 export default function TagCloud({ tags }: TagCloudProps) {
   return (
-    <div id="tagcloud">
-      <div className="title_horizontal">
-        <h3>태그</h3>
-      </div>
-      <div className="content_horizontal">
-        <div id="tag_contents" className="nano has-scrollbar">
-          <div id="tag_contents">
+    <SideBox>
+      <SideBoxTitle content="태그" />
+      <SideBoxContent>
+        <div className="tag-contents">
+          <div className="tag-contents__list">
             {tags.map((tag, idx) => (
-              <span key={tag.no}>
-                <a className={tagLevel(tag.count)} href={`/tag/${tag.no}`}>
+              <span key={tag.no} className="tag-contents__item">
+                <a className={`tag-contents__tag ${tagLevel(tag.count)}`} href={`/tag/${tag.no}`}>
                   {tag.content}
                 </a>
-                {idx !== tags.length - 1 && <span className="bar">|</span>}
+                {idx !== tags.length - 1 && <span className="tag-contents__bar">|</span>}
               </span>
             ))}
           </div>
-          <div id="tag_search" className="search">
-            <input id="tag_search_content" type="text" />
-            <button id="tag_search_button">검색</button>
+          <div className="tag-contents__search">
+            <input className="tag-contents__input" type="text" />
+            <button className="tag-contents__button">검색</button>
           </div>
         </div>
-      </div>
-    </div>
+      </SideBoxContent>
+    </SideBox>
   )
 }
