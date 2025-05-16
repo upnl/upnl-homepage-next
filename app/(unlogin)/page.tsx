@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import "./index.css";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
 // from date.strftime('%Y.%m.%d')
 // TODO: use dayjs
@@ -15,6 +17,9 @@ function formatDate(date: Date) {
 }
 
 export default async function Index() {
+  const session = await getServerSession();
+  if (session) redirect("/main");
+
   // TODO: get data from database
   const mainContent = null;
   const tags = [
