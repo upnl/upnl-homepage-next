@@ -2,12 +2,29 @@
 
 /**
  * @file commons.tsx
- * @description 공통적으로 사용하는 컴포넌트 리스트입니다. html 태그 처럼 사용하는 것이 주 목적입니다.
+ * @description
+ * 이 파일은 Layout은 아니지만 공통적으로 재사용되는 UI 레이아웃 컴포넌트 모음입니다.
+ * 각 컴포넌트는 HTML 태그처럼 직관적으로 사용할 수 있도록 설계되었으며,
+ * 중복을 줄이고 유지보수를 용이하게 하기 위해 컴포넌트화되었습니다.
+ * 
+ * 컴포넌트화의 기준은 
+ *  1) 한 페이지 내에서 2회 이상 사용
+ *  2) 해당 컴포넌트를 사용 가능한 페이지가 2면 이상
+ *  3) 해당 컴포넌트를 사용하는 요소의 구조 설계가 달라질 일이 기대되지 않음.
+ * 입니다.
+ * 
+ * - `SideBox` 계열 컴포넌트는 좌측 사이드바 레이아웃을 구성할 때 사용됩니다.
+ *   `/projects` 페이지에 두 개가 반복되며, 동일한 레이아웃이 `/studies`, `/workshops` 등에서도 사용되므로 컴포넌트화합니다.
+ *
+ * - `GridBox` 계열 컴포넌트는 프로젝트, 스터디 카드 등 목록 형태의 콘텐츠를 시각적으로 나열할 때 사용됩니다.
+ *   `/projects` 페이지에서 마찬가지로 두 개가 반복되며, 동일한 UI를 `/studies` 페이지에도 적용할 수 있어 재사용성을 고려해 컴포넌트화하였습니다.
  * 
  * @author Serius <tomskang@naver.com>
  * @lastModified 2025-05-16
- *
- * @dependency @/styles/components/commons.css, Next, React
+ * 
+ * @dependency
+ * - @/styles/components/commons.css
+ * - React, Next
 **/
 
 // Next
