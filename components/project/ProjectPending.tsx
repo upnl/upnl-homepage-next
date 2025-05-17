@@ -10,7 +10,7 @@
  * @component
  * @param {number[]} yearList - 선택 가능한 연도 목록
  * @param {Project[]} projects - 전체 완료된 프로젝트 목록 getProjectsDataSuite.pendingProjects
- * @param {number} cardWidth - 카드 너비 (단위=px). 값이 주어지지 않으면 355로 설정됨.
+ * @param {number} cardWidth - 카드 너비 (단위=px).
  *
  * @state {number} selectedYear - 현재 선택된 연도 (버튼 클릭으로 변경됨)
  * @state {Project[]} filteredProjects - 선택된 연도에 해당하는 프로젝트
