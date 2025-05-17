@@ -29,8 +29,8 @@ export default async function ProjectPage() {
 
       {/* Center-Right Section */}
       <Main>
-        <ProjectWorkin projects={workingProjects} />
-        <ProjectPending projects={pendingProjects} yearList={yearList} />
+        <ProjectWorkin projects={workingProjects} cardWidth={355} />
+        <ProjectPending projects={pendingProjects} yearList={yearList} cardWidth={355} />
       </Main>
     </Container>
   )

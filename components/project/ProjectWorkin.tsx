@@ -2,25 +2,26 @@
 
 // Components
 import ProjectCard from './ProjectCard'
-import { GridBox, GridBoxTitle, GridBoxContent } from '@/components/commons'
+import { ContentBox, ContentBoxTitle, ContentBoxGridContent } from '@/components/commons'
 // Types
 import { Project } from '@/types/project'
 
 type ProjectWorkinProps = {
   projects: Project[]
   isPublic?: boolean
+  cardWidth: number
 }
 
-export default function ProjectWorkin({ projects, isPublic = false }: ProjectWorkinProps) {
+export default function ProjectWorkin({ projects, isPublic = false, cardWidth }: ProjectWorkinProps) {
   const filteredProjects = isPublic ? projects.filter(project => project.is_public) : projects
   return (
-    <GridBox id="working-project">
-      <GridBoxTitle content="진행중인 프로젝트" button={isPublic ? undefined : { href: "/new_project", text: "새 프로젝트" }} />
-      <GridBoxContent>
+    <ContentBox id="working-project">
+      <ContentBoxTitle content="진행중인 프로젝트" button={isPublic ? undefined : { href: "/new_project", text: "새 프로젝트" }} />
+      <ContentBoxGridContent cardWidth={cardWidth}>
         {filteredProjects.map((project) => (
-          <ProjectCard key={project.no} project={project} />
+          <ProjectCard key={project.no} project={project} width={cardWidth} />
         ))}
-      </GridBoxContent>
-    </GridBox>
+      </ContentBoxGridContent>
+    </ContentBox>
   )
 }

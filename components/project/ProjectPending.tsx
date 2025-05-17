@@ -5,11 +5,12 @@
  * @description 연도별로 완료된 프로젝트 목록을 필터링하여 렌더링하는 컴포넌트.
  * 
  * @author Serius <tomskang@naver.com>
- * @lastModified 2025-05-14
+ * @lastModified 2025-05-17
  * 
  * @component
  * @param {number[]} yearList - 선택 가능한 연도 목록
  * @param {Project[]} projects - 전체 완료된 프로젝트 목록 getProjectsDataSuite.pendingProjects
+ * @param {number} cardWidth - 카드 너비 (단위=px). 값이 주어지지 않으면 355로 설정됨.
  *
  * @state {number} selectedYear - 현재 선택된 연도 (버튼 클릭으로 변경됨)
  * @state {Project[]} filteredProjects - 선택된 연도에 해당하는 프로젝트
@@ -21,7 +22,7 @@
 
 // Components
 import ProjectCard from './ProjectCard'
-import { GridBox, GridBoxTitle, GridBoxContent } from '@/components/commons'
+import { ContentBox, ContentBoxTitle, ContentBoxGridContent } from '@/components/commons'
 // React
 import { useEffect, useState, Fragment } from 'react'
 // Styles
@@ -32,9 +33,10 @@ import { Project } from '@/types/project'
 type ProjectPendingProps = {
   yearList: number[]
   projects: Project[]
+  cardWidth: number
 }
 
-export default function ProjectPending({ yearList, projects }: ProjectPendingProps) {
+export default function ProjectPending({ yearList, projects, cardWidth }: ProjectPendingProps) {
   const [selectedYear, setSelectedYear] = useState<number>(yearList[0])
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([])
 
@@ -46,8 +48,8 @@ export default function ProjectPending({ yearList, projects }: ProjectPendingPro
   }, [selectedYear, projects]);
 
   return (
-    <GridBox id="pending-project">
-      <GridBoxTitle content="완료된 프로젝트" />
+    <ContentBox id="pending-project">
+      <ContentBoxTitle content="완료된 프로젝트" />
 
       {/* 연도 선택 */}
       <div className="project-year-list article">
@@ -64,13 +66,13 @@ export default function ProjectPending({ yearList, projects }: ProjectPendingPro
 
       {/* 프로젝트 목록 */}
       {filteredProjects.length > 0 ? (
-        <GridBoxContent>
+        <ContentBoxGridContent cardWidth={cardWidth}>
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.no} project={project} /> ))}
-        </GridBoxContent>
+            <ProjectCard key={project.no} project={project} width={cardWidth} /> ))}
+        </ContentBoxGridContent>
       ) : (
         <p className="projects__notice-empty">해당 연도에 완료된 프로젝트가 없습니다.</p>
       )}
-    </GridBox>
+    </ContentBox>
   )
 }

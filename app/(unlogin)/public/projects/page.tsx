@@ -16,8 +16,8 @@ export default async function ProjectPage() {
 
   return (
     <Container>
-      <ProjectWorkin projects={workingProjects} isPublic />
-      <ProjectPending projects={pendingProjects} yearList={yearList} />
+      <ProjectWorkin projects={workingProjects} isPublic cardWidth={305} />
+      <ProjectPending projects={pendingProjects} yearList={yearList} cardWidth={305} />
     </Container>
   )
 }

@@ -16,11 +16,11 @@
  * - `SideBox` 계열 컴포넌트는 좌측 사이드바 레이아웃을 구성할 때 사용됩니다.
  *   `/projects` 페이지에 두 개가 반복되며, 동일한 레이아웃이 `/studies`, `/workshops` 등에서도 사용되므로 컴포넌트화합니다.
  *
- * - `GridBox` 계열 컴포넌트는 프로젝트, 스터디 카드 등 목록 형태의 콘텐츠를 시각적으로 나열할 때 사용됩니다.
+ * - `ContentBox` 계열 컴포넌트는 프로젝트, 스터디 카드 등 목록 형태의 콘텐츠를 시각적으로 나열할 때 사용됩니다.
  *   `/projects` 페이지에서 마찬가지로 두 개가 반복되며, 동일한 UI를 `/studies` 페이지에도 적용할 수 있어 재사용성을 고려해 컴포넌트화하였습니다.
  * 
  * @author Serius <tomskang@naver.com>
- * @lastModified 2025-05-16
+ * @lastModified 2025-05-17
  * 
  * @dependency
  * - @/styles/components/commons.css
@@ -67,47 +67,48 @@ export function SideBoxContent({ children, id, styles }: SideBoxContentProps) {
 }
 
 /**
- * @component GridBox
+ * @component ContentBox
  * @description 프로젝트 또는 스터디 카드들을 감싸는 그리드 레이아웃 컨테이너입니다.
- * 일반적으로 내부에 <GridBoxTitle />과 <GridBoxContent />를 함께 사용하여
+ * 일반적으로 내부에 <ContentBoxTitle />과 <ContentBoxContent />를 함께 사용하여
  * 제목과 콘텐츠 영역을 나누어 구성합니다.
  * 
  * @usage
  * ```tsx
- * <GridBox id="project_grid">
- *   <GridBoxTitle content="프로젝트 목록" />
- *   <GridBoxContent>
+ * <ContentBox id="project_grid">
+ *   <ContentBoxTitle content="프로젝트 목록" />
+ *   <ContentBoxContent>
  *     <ProjectCard />
  *     <ProjectCard />
  *     <StudyCard />
- *   </GridBoxContent>
- * </GridBox>
+ *   </ContentBoxContent>
+ * </ContentBox>
  * ```
 **/
 
-type GridBoxProps = { children: React.ReactNode; id?: string; styles?: React.CSSProperties; };
-export function GridBox({ children, id, styles }: GridBoxProps) {
+type ContentBoxProps = { children: React.ReactNode; id?: string; styles?: React.CSSProperties; };
+export function ContentBox({ children, id, styles }: ContentBoxProps) {
   return (
-    <section className="gridbox" id={id} style={styles}> {children} </section> );
+    <section className="contentbox" id={id} style={styles}> {children} </section> );
 }
 
-type GridBoxTitleProps = {
+type ContentBoxTitleProps = {
   content: string;
   id?: string;
   button?: { href: string; text: string; id?: string; };
 };
-export function GridBoxTitle({ content, id, button }: GridBoxTitleProps) {
+export function ContentBoxTitle({ content, id, button }: ContentBoxTitleProps) {
   return (
-    <div className="gridbox__title" id={id}>
-      <h3 className="gridbox__titletext">{content}</h3>
+    <div className="contentbox__title" id={id}>
+      <h3 className="contentbox__titletext">{content}</h3>
       {button && (
-        <Link href={button.href} id={button.id} className="gridbox__titlebutton">{button.text}</Link>)}
+        <Link href={button.href} id={button.id} className="contentbox__titlebutton">{button.text}</Link>)}
     </div>
   );
 }
 
-type GridBoxContentProps = { children: React.ReactNode; id?: string; styles?: React.CSSProperties; };
-export function GridBoxContent({ children, id, styles }: GridBoxContentProps) {
+type ContentBoxGridContentProps = { children: React.ReactNode; cardWidth: number; id?: string; styles?: React.CSSProperties; };
+export function ContentBoxGridContent({ children, cardWidth, id, styles }: ContentBoxGridContentProps) {
+  const totalStyle: React.CSSProperties = { ...styles, ...{ gridTemplateColumns: `repeat(auto-fit, ${cardWidth}px)`} };
   return (
-    <div className="gridbox__content" id={id} style={styles}> {children} </div> );
+    <div className="contentbox__grid-content" id={id} style={totalStyle}> {children} </div> );
 }

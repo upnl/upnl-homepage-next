@@ -1,8 +1,9 @@
 /* @/styles/components/external-templates.tsx */
 
 #external-container {
+  box-sizing: border-box;
   width: 100%;
   margin: 0;
-  padding: 15px;
+  padding: 0px 15px 15px 15px;
   padding-top: 0;
 }

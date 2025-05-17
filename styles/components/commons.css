@@ -46,14 +46,14 @@
   list-style-type: none;
 }
 
-.gridbox {
+.contentbox {
   width: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.gridbox__title {
+.contentbox__title {
   width: 100%;
   margin-bottom: 2px;
 
@@ -62,14 +62,14 @@
   align-items: center;
 }
 
-.gridbox__titletext {
+.contentbox__titletext {
   margin: 0;
   font-size: 20px;
   font-weight: bold;
   color: #222;
 }
 
-.gridbox__titlebutton {
+.contentbox__titlebutton {
   width: 100px;
   height: 30px;
   margin: 0 5px;
@@ -90,10 +90,9 @@
   &:hover{ color: #fff; }
 }
 
-.gridbox__content {
+.contentbox__grid-content {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 355px);
   justify-content: space-between;
-  gap: 10px;
+  gap: 5px;
 }
