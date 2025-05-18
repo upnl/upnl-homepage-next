@@ -16,7 +16,7 @@ export default function ProjectWorkin({ projects, isPublic = false, cardWidth }:
   const filteredProjects = isPublic ? projects.filter(project => project.is_public) : projects
   return (
     <ContentBox id="working-project">
-      <ContentBoxTitle content="진행중인 프로젝트" button={isPublic ? undefined : { href: "/new_project", text: "새 프로젝트" }} />
+      <ContentBoxTitle content="진행중인 프로젝트" button={isPublic ? undefined : { href: "/projects/create", text: "새 프로젝트" }} />
       <ContentBoxGridContent cardWidth={cardWidth}>
         {filteredProjects.map((project) => (
           <ProjectCard key={project.no} project={project} width={cardWidth} />

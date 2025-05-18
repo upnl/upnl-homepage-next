@@ -112,3 +112,9 @@ export function ContentBoxGridContent({ children, cardWidth, id, styles }: Conte
   return (
     <div className="contentbox__grid-content" id={id} style={totalStyle}> {children} </div> );
 }
+
+type ContentBoxFullContentProps = { children: React.ReactNode; id?: string; styles?: React.CSSProperties; };
+export function ContentBoxFullContent({ children, id, styles }: ContentBoxFullContentProps) {
+  return (
+    <div className="contentbox__full-content" id={id} style={styles}> {children} </div> );
+}

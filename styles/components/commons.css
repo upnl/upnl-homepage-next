@@ -96,3 +96,7 @@
   justify-content: space-between;
   gap: 5px;
 }
+
+.contentbox__full-content {
+  width: 100%;
+}

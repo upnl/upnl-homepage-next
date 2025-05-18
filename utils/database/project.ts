@@ -26,7 +26,7 @@ export async function getProjectsDataSuite(): Promise<{
       tag_list: ['포켓몬', 'DB'],
     },
     {
-      no: 7,
+      no: 73,
       name: 'We R the Ducks?!(미완)',
       genre: '퍼즐게임',
       is_public: false,

@@ -2,7 +2,7 @@
 
 // Components
 import { Container, SideBar, Main } from '@/components/internalTemplates'
-import TagCloud from './TagCloud'
+import TagCloud from '@/components/project/TagCloud'
 import ProjectSide from '@/components/project/ProjectSidebar'
 import ProjectWorkin from '@/components/project/ProjectWorkin'
 import ProjectPending from '@/components/project/ProjectPending'
