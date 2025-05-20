@@ -12,7 +12,7 @@ type ProjectWorkinProps = {
   cardWidth: number
 }
 
-export default function ProjectWorkin({ projects, isPublic = false, cardWidth }: ProjectWorkinProps) {
+export default function ProjectWorking({ projects, isPublic = false, cardWidth }: ProjectWorkinProps) {
   const filteredProjects = isPublic ? projects.filter(project => project.is_public) : projects
   return (
     <ContentBox id="working-project">

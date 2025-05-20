@@ -2,7 +2,7 @@
 
 // Components
 import { Container } from '@/components/externalTemplates';
-import ProjectWorkin from '@/components/project/ProjectWorkin'
+import ProjectWorking from '@/components/project/ProjectWorking'
 import ProjectPending from '@/components/project/ProjectPending'
 // Utils
 import { getProjectsDataSuite } from '@/utils/database/project'
@@ -16,7 +16,7 @@ export default async function ProjectPage() {
 
   return (
     <Container>
-      <ProjectWorkin projects={workingProjects} isPublic cardWidth={305} />
+      <ProjectWorking projects={workingProjects} isPublic cardWidth={305} />
       <ProjectPending projects={pendingProjects} yearList={yearList} cardWidth={305} />
     </Container>
   )
