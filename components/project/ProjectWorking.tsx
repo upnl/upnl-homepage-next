@@ -6,13 +6,13 @@ import { ContentBox, ContentBoxTitle, ContentBoxGridContent } from '@/components
 // Types
 import { Project } from '@/types/project'
 
-type ProjectWorkinProps = {
+type ProjectWorkingProps = {
   projects: Project[]
   isPublic?: boolean
   cardWidth: number
 }
 
-export default function ProjectWorking({ projects, isPublic = false, cardWidth }: ProjectWorkinProps) {
+export default function ProjectWorking({ projects, isPublic = false, cardWidth }: ProjectWorkingProps) {
   const filteredProjects = isPublic ? projects.filter(project => project.is_public) : projects
   return (
     <ContentBox id="working-project">
