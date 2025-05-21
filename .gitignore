@@ -47,3 +47,4 @@ next-env.d.ts
 
 # generated Prisma client
 /prisma/client
+/prisma-psql/client
