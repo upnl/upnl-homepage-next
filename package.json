@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier app components utils --check",
+    "format:fix": "prettier app components utils --write",
     "postinstall": "prisma generate --allow-no-models"
   },
   "dependencies": {
