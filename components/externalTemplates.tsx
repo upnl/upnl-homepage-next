@@ -10,7 +10,7 @@
 */
 
 // Style
-import "@/styles/components/external-templates.css"
+import "@/styles/components/external-templates.css";
 
 export function Container({ children }: { children: React.ReactNode }) {
   return (
