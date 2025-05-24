@@ -9,10 +9,8 @@ function formatDate(date: Date) {
 }
 
 function isNew(date: Date) {
-  // TODO
-  const now = new Date();
-  const diff = now.getTime() - date.getTime();
-  const diffHours = Math.floor(diff / (1000 * 60 * 60));
+  const now = dayjs();
+  const diffHours = now.diff(date, "hour");
   return diffHours < 24;
 }
 
