@@ -1,20 +1,9 @@
 import { Fragment } from "react";
 import Link from "next/link";
+import dayjs from "dayjs";
 import "./index.css";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-
-// from date.strftime('%Y.%m.%d')
-// TODO: use dayjs
-function formatDate(date: Date) {
-  return (
-    date.getFullYear() +
-    "." +
-    String(date.getMonth() + 1).padStart(2, "0") +
-    "." +
-    String(date.getDate()).padStart(2, "0")
-  );
-}
 
 export default async function Index() {
   const session = await getServerSession();
@@ -105,7 +94,7 @@ export default async function Index() {
               </h4>
             </div>
             <div className="workshop_datatime">
-              {formatDate(workshop.start_date)}
+              {dayjs(workshop.start_date).format("YYYY.MM.DD")}
             </div>
             <div className="workshop_about nano">
               <div className="nano-content">

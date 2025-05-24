@@ -1,39 +1,16 @@
+import dayjs from "dayjs";
 import { Container, MainAlone, Panorama } from "@/components/internalTemplates";
 import Link from "next/link";
 import "@/public/css/border_text.css";
 import "./page.css";
 
-/*
- * TODO: use dayjs
- * date.strftime('%m/%d')
- */
 function formatDate(date: Date) {
-  return (
-    String(date.getMonth() + 1).padStart(2, "0") +
-    "/" +
-    String(date.getDate()).padStart(2, "0")
-  );
-}
-
-/*
- * TODO: use dayjs
- * date.strftime('%Y.%m.%d')
- */
-function formatWorkshopDate(date: Date) {
-  return (
-    date.getFullYear() +
-    "." +
-    String(date.getMonth() + 1).padStart(2, "0") +
-    "." +
-    String(date.getDate()).padStart(2, "0")
-  );
+  return dayjs(date).format("MM/DD");
 }
 
 function isNew(date: Date) {
-  // TODO
-  const now = new Date();
-  const diff = now.getTime() - date.getTime();
-  const diffHours = Math.floor(diff / (1000 * 60 * 60));
+  const now = dayjs();
+  const diffHours = now.diff(date, "hour");
   return diffHours < 24;
 }
 
@@ -320,7 +297,7 @@ export default async function LoginIndex() {
                 </h4>
               </div>
               <div className="workshop_datatime">
-                {formatWorkshopDate(workshop.start_date)}
+                {dayjs(workshop.start_date).format("YYYY.MM.DD")}
               </div>
               <div className="workshop_about nano">
                 <div className="nano-content">
