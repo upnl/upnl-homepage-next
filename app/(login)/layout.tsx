@@ -1,27 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import dayjs from "dayjs";
 import "./layout.css";
 import logo from "@/public/images/upnl.png";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import CategoryMenu from "./CategoryMenu";
 import LogoutButton from "./LogoutButton";
-
-// from date.strftime('%Y/%m/%d %H:%M')
-// TODO: use dayjs
-function formatDate(date: Date) {
-  return (
-    date.getFullYear() +
-    "/" +
-    String(date.getMonth() + 1).padStart(2, "0") +
-    "/" +
-    String(date.getDate()).padStart(2, "0") +
-    " " +
-    String(date.getHours()).padStart(2, "0") +
-    ":" +
-    String(date.getMinutes()).padStart(2, "0")
-  );
-}
 
 export default async function LoginLayout({
   children,
@@ -44,9 +29,6 @@ export default async function LoginLayout({
   ];
   const lastCommit = "abcdef";
   const lastCommitDate = new Date();
-
-  // TODO: utilties
-  const prettyDate = (date: Date) => formatDate(date);
 
   return (
     <div id="body">
@@ -125,7 +107,7 @@ export default async function LoginLayout({
               >
                 {lastCommit.slice(0, 5)}
               </Link>
-              (최근 수정: {prettyDate(lastCommitDate)})
+              (최근 수정: {dayjs(lastCommitDate).format("YYYY/MM/DD HH:mm")})
             </span>
           )}
         </div>

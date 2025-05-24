@@ -25,6 +25,7 @@
 */
 
 import Link from "next/link";
+import dayjs from "dayjs";
 
 export function Container({ children }: { children: React.ReactNode }) {
   return (
@@ -50,20 +51,8 @@ export function SideBar({ children }: { children: React.ReactNode }) {
   return <div id="sidebar">{children}</div>;
 }
 
-// from date.strftime('%Y/%m/%d %H:%M')
-// TODO: use dayjs
 function formatDate(date: Date) {
-  return (
-    date.getFullYear() +
-    "/" +
-    String(date.getMonth() + 1).padStart(2, "0") +
-    "/" +
-    String(date.getDate()).padStart(2, "0") +
-    " " +
-    String(date.getHours()).padStart(2, "0") +
-    ":" +
-    String(date.getMinutes()).padStart(2, "0")
-  );
+  return dayjs(date).format("YYYY/MM/DD HH:mm");
 }
 
 export async function Panorama() {
@@ -97,7 +86,6 @@ export async function Panorama() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const makeGravatarUrl = (_email: string, _size: number) =>
     "https://example.com";
-  const prettyDate = (date: Date) => formatDate(date);
   return (
     <>
       <button id="panorama-wake-button">파노라마</button>
@@ -147,7 +135,7 @@ export async function Panorama() {
                         title={formatDate(panorama.date)}
                         className="datatime"
                       >
-                        ({prettyDate(panorama.date)})
+                        ({formatDate(panorama.date)})
                       </span>
                     </div>
                   </div>
