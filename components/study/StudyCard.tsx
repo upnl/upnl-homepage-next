@@ -1,4 +1,4 @@
-// @/components/study/StudyCard
+// @/components/study/StudyCard.tsx
 
 // Next
 import Link from "next/link";

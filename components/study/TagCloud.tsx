@@ -1,4 +1,4 @@
-// components/TagCloud.tsx
+// @/components/study/TagCloud.tsx
 
 // Components
 import { SideBox, SideBoxTitle, SideBoxContent } from "@/components/commons";

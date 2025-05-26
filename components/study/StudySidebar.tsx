@@ -1,4 +1,4 @@
-// @/components/StudySidebar.tsx
+// @/components/study/StudySidebar.tsx
 
 "use client";
 

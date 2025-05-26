@@ -1,4 +1,4 @@
-// @/components/study/StudyGrid
+// @/components/study/StudyGrid.tsx
 
 // Component
 import StudyCard from "@/components/study/StudyCard";
