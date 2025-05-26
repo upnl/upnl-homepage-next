@@ -1,9 +1,9 @@
 // @/components/study/StudyGrid
 
 // Component
-import StudyCard from '@/components/study/StudyCard';
+import StudyCard from "@/components/study/StudyCard";
 // Type
-import { StudySuite } from '@/utils/typeSuite';
+import { StudySuite } from "@/utils/typeSuite";
 
 export default function StudyGrid({
   studies,

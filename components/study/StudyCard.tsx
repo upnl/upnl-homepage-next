@@ -1,9 +1,9 @@
 // @/components/study/StudyCard
 
 // Next
-import Link from 'next/link';
+import Link from "next/link";
 // Type
-import { StudySuite } from '@/utils/typeSuite';
+import { StudySuite } from "@/utils/typeSuite";
 
 export default function StudyCard({ study }: { study: StudySuite }) {
   return (
@@ -13,8 +13,15 @@ export default function StudyCard({ study }: { study: StudySuite }) {
           <Link href={`/board/${study.board_no}`}>{study.name}</Link>
         </h4>
         <div className="study_date">
-          <span className="date">{study.start_date.slice(0, 7).replace('-', '.')}</span> ~{' '}
-          <span className="date">{study.finish_date ? study.finish_date.slice(0, 7).replace('-', '.') : ''}</span>
+          <span className="date">
+            {study.start_date.slice(0, 7).replace("-", ".")}
+          </span>{" "}
+          ~{" "}
+          <span className="date">
+            {study.finish_date
+              ? study.finish_date.slice(0, 7).replace("-", ".")
+              : ""}
+          </span>
         </div>
         <div className="study_about">
           <span>{study.introduction}</span>
@@ -29,7 +36,9 @@ export default function StudyCard({ study }: { study: StudySuite }) {
       <div className="study_tag">
         <span>TAG </span>
         {study.tag_list.map((tag, idx) => (
-          <span key={idx} className="tags_link">{tag}</span>
+          <span key={idx} className="tags_link">
+            {tag}
+          </span>
         ))}
       </div>
     </div>

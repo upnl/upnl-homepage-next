@@ -1,9 +1,9 @@
-import { Container, SideBar, Main } from '@/components/internalTemplates';
-import StudySidebar from '@/components/study/StudySidebar';
-import StudyGrid from '@/components/study/StudyGrid';
-import TagCloud from '@/components/study/TagCloud';
-import { getStudiesDataSuite } from '@/utils/database/study';
-import { getTagData } from '@/utils/database/project';
+import { Container, SideBar, Main } from "@/components/internalTemplates";
+import StudySidebar from "@/components/study/StudySidebar";
+import StudyGrid from "@/components/study/StudyGrid";
+import TagCloud from "@/components/study/TagCloud";
+import { getStudiesDataSuite } from "@/utils/database/study";
+import { getTagData } from "@/utils/database/tag";
 
 export default async function StudyPage() {
   const { workingStudies, pendingStudies } = await getStudiesDataSuite();
@@ -12,7 +12,10 @@ export default async function StudyPage() {
   return (
     <Container>
       <SideBar>
-        <StudySidebar workingStudies={workingStudies} pendingStudies={pendingStudies} />
+        <StudySidebar
+          workingStudies={workingStudies}
+          pendingStudies={pendingStudies}
+        />
         <TagCloud tags={tagList} />
       </SideBar>
       <Main>
