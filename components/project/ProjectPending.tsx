@@ -3,10 +3,10 @@
 /**
  * @file ProjectPending.tsx
  * @description 연도별로 완료된 프로젝트 목록을 필터링하여 렌더링하는 컴포넌트.
- * 
+ *
  * @author Serius <tomskang@naver.com>
  * @lastModified 2025-05-17
- * 
+ *
  * @component
  * @param {number[]} yearList - 선택 가능한 연도 목록
  * @param {ProjectSuite[]} projects - 전체 완료된 프로젝트 목록 getProjectsDataSuite.pendingProjects
@@ -16,33 +16,42 @@
  * @state {Project[]} filteredProjects - 선택된 연도에 해당하는 프로젝트
  *
  * @dependency @/types/project.tsx, React
-**/
+ **/
 
-'use client'
+"use client";
 
 // Components
-import ProjectCard from './ProjectCard'
-import { ContentBox, ContentBoxTitle, ContentBoxGridContent } from '@/components/commons'
+import ProjectCard from "./ProjectCard";
+import {
+  ContentBox,
+  ContentBoxTitle,
+  ContentBoxGridContent,
+} from "@/components/commons";
 // React
-import { useEffect, useState, Fragment } from 'react'
+import { useEffect, useState, Fragment } from "react";
 // Styles
 import "@/styles/components/project/project-pending.css";
 // Types
-import { ProjectSuite } from '@/utils/typeSuite'
+import { ProjectSuite } from "@/utils/typeSuite";
 
 type ProjectPendingProps = {
-  yearList: number[]
-  projects: ProjectSuite[]
-  cardWidth: number
-}
+  yearList: number[];
+  projects: ProjectSuite[];
+  cardWidth: number;
+};
 
-export default function ProjectPending({ yearList, projects, cardWidth }: ProjectPendingProps) {
-  const [selectedYear, setSelectedYear] = useState<number>(yearList[0])
-  const [filteredProjects, setFilteredProjects] = useState<ProjectSuite[]>([])
+export default function ProjectPending({
+  yearList,
+  projects,
+  cardWidth,
+}: ProjectPendingProps) {
+  const [selectedYear, setSelectedYear] = useState<number>(yearList[0]);
+  const [filteredProjects, setFilteredProjects] = useState<ProjectSuite[]>([]);
 
   useEffect(() => {
     const filtered = projects.filter(
-      (p) => p.finish_date && new Date(p.finish_date).getFullYear() === selectedYear
+      (p) =>
+        p.finish_date && new Date(p.finish_date).getFullYear() === selectedYear,
     );
     setFilteredProjects(filtered);
   }, [selectedYear, projects]);
@@ -56,8 +65,13 @@ export default function ProjectPending({ yearList, projects, cardWidth }: Projec
         <h3 className="project-year-list__title">완료 프로젝트 목록</h3>
         {yearList.map((year, idx) => (
           <Fragment key={year}>
-            {idx > 0 && <span className="project-year-list__seperator"> | </span>}
-            <a onClick={() => setSelectedYear(year)} className="project-year-list__year">
+            {idx > 0 && (
+              <span className="project-year-list__seperator"> | </span>
+            )}
+            <a
+              onClick={() => setSelectedYear(year)}
+              className="project-year-list__year"
+            >
               {year}년
             </a>
           </Fragment>
@@ -68,11 +82,14 @@ export default function ProjectPending({ yearList, projects, cardWidth }: Projec
       {filteredProjects.length > 0 ? (
         <ContentBoxGridContent cardWidth={cardWidth}>
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.no} project={project} width={cardWidth} /> ))}
+            <ProjectCard key={project.no} project={project} width={cardWidth} />
+          ))}
         </ContentBoxGridContent>
       ) : (
-        <p className="projects__notice-empty">해당 연도에 완료된 프로젝트가 없습니다.</p>
+        <p className="projects__notice-empty">
+          해당 연도에 완료된 프로젝트가 없습니다.
+        </p>
       )}
     </ContentBox>
-  )
+  );
 }

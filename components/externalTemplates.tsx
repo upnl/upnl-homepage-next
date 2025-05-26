@@ -1,4 +1,3 @@
-
 // @/components/externalTemplates.tsx
 
 /*

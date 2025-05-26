@@ -2,8 +2,8 @@
 
 /**
  * @file ProjectCard.tsx
- * @description 개별 프로젝트 정보를 카드 형태로 렌더링하는 컴포넌트.  
- * 추후 `user_login`, `tag_render` 등의 props를 받아 사용자 기반 제어 및  
+ * @description 개별 프로젝트 정보를 카드 형태로 렌더링하는 컴포넌트.
+ * 추후 `user_login`, `tag_render` 등의 props를 받아 사용자 기반 제어 및
  * 커스텀 태그 렌더링 등 재사용성을 강화할 수 있도록 확장 예정.
  *
  * @author Serius <tomskang@naver.com>
@@ -15,28 +15,31 @@
  * @param {number?} width - 카드 너비 (px). 값이 주어지지 않으면 355px로 설정됨.
  *
  * @dependency next/image, @/types/project.ts, ./project.css
-**/
+ **/
 
 // Next
-import Image from 'next/image'
+import Image from "next/image";
 // Styles
-import "@/styles/components/project/project-card.css"
+import "@/styles/components/project/project-card.css";
 // Types
-import { ProjectSuite } from '@/utils/typeSuite'
+import { ProjectSuite } from "@/utils/typeSuite";
 
 type ProjectCardProps = {
-  project: ProjectSuite
-  width?: number
-}
+  project: ProjectSuite;
+  width?: number;
+};
 
 export default function ProjectCard({ project, width }: ProjectCardProps) {
   return (
-    <div className="project-card" style={width ? { width: `${width}px` } : undefined}>
+    <div
+      className="project-card"
+      style={width ? { width: `${width}px` } : undefined}
+    >
       <div className="project-card__information">
         <div className="project-card__thumbnail-box">
           <a href={`/board/${project.bbs_url}`}>
             <Image
-              src={`/download/thumbnail/${project.thumbnail || 'default_thumb_upnl.png'}`}
+              src={`/download/thumbnail/${project.thumbnail || "default_thumb_upnl.png"}`}
               alt={`${project.name} thumbnail`}
               width={128}
               height={128}
@@ -46,14 +49,15 @@ export default function ProjectCard({ project, width }: ProjectCardProps) {
           </a>
         </div>
 
-        
         <h4 className="project-card__title">
           <a href={`/board/${project.bbs_url}`}>{project.name}</a>
         </h4>
         <h5 className="project-card__genre">{project.genre}</h5>
         <div className="project-card__date">
-          {project.start_date.slice(0, 7).replace('-', '.')} ~
-          {project.finish_date ? ' ' + project.finish_date.slice(0, 7).replace('-', '.') : ''}
+          {project.start_date.slice(0, 7).replace("-", ".")} ~
+          {project.finish_date
+            ? " " + project.finish_date.slice(0, 7).replace("-", ".")
+            : ""}
         </div>
 
         <div className="project-card__member-box">
@@ -83,5 +87,5 @@ export default function ProjectCard({ project, width }: ProjectCardProps) {
         {/* 태그 추가 버튼 */}
       </div>
     </div>
-  )
+  );
 }

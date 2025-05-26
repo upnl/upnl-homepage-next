@@ -1,20 +1,20 @@
 // components/TagCloud.tsx
 
 // Components
-import { SideBox, SideBoxTitle, SideBoxContent } from '@/components/commons'
+import { SideBox, SideBoxTitle, SideBoxContent } from "@/components/commons";
 // Styles
-import '@/styles/login/projects/tagcloud.css'
+import "@/styles/login/projects/tagcloud.css";
 // Types
-import { TagCount } from '@/utils/types'
+import { TagCount } from "@/utils/types";
 
 function tagLevel(count: number): string {
-  if (count > 10) return 'tag-contents__tag--xl'
-  if (count > 5) return 'tag-contents__tag--lg'
-  if (count > 2) return 'tag-contents__tag--md'
-  return 'tag-contents__tag--sm'
+  if (count > 10) return "tag-contents__tag--xl";
+  if (count > 5) return "tag-contents__tag--lg";
+  if (count > 2) return "tag-contents__tag--md";
+  return "tag-contents__tag--sm";
 }
 
-type TagCloudProps = { tags: TagCount[] }
+type TagCloudProps = { tags: TagCount[] };
 export default function TagCloud({ tags }: TagCloudProps) {
   return (
     <SideBox>
@@ -24,10 +24,15 @@ export default function TagCloud({ tags }: TagCloudProps) {
           <div className="tag-contents__list">
             {tags.map((tag, idx) => (
               <span key={tag.no} className="tag-contents__item">
-                <a className={`tag-contents__tag ${tagLevel(tag.count)}`} href={`/tag/${tag.no}`}>
+                <a
+                  className={`tag-contents__tag ${tagLevel(tag.count)}`}
+                  href={`/tag/${tag.no}`}
+                >
                   {tag.content}
                 </a>
-                {idx !== tags.length - 1 && <span className="tag-contents__bar">|</span>}
+                {idx !== tags.length - 1 && (
+                  <span className="tag-contents__bar">|</span>
+                )}
               </span>
             ))}
           </div>
@@ -38,5 +43,5 @@ export default function TagCloud({ tags }: TagCloudProps) {
         </div>
       </SideBoxContent>
     </SideBox>
-  )
+  );
 }
