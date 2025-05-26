@@ -12,7 +12,8 @@
   cursor: pointer;
 }
 
-#working_study_list, #pending_study_list {
+#working_study_list,
+#pending_study_list {
   clear: both;
 }
 
@@ -51,8 +52,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width:350px;
-  min-height:160px;
+  width: 350px;
+  min-height: 160px;
   margin: 5px;
   margin-right: 10px;
   box-sizing: border-box;
@@ -73,7 +74,7 @@
   margin-right: 5px;
   font-size: 15px;
   line-height: 20px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .study_date {
@@ -82,15 +83,15 @@
 }
 
 .study_about {
-  font-size:15px;
-  min-height:60px;
-  width:100%;
-  margin-bottom:10px;
+  font-size: 15px;
+  min-height: 60px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .study_member {
   text-align: left;
-  font-size:12px;
+  font-size: 12px;
 }
 
 .study_member_all {
@@ -105,7 +106,7 @@
 
 .tags {
   margin: 5px 0px;
-  font-size:10px;
+  font-size: 10px;
 }
 
 .tags span {
@@ -117,7 +118,11 @@
   font-size: 12px;
 }
 
-form, .control-group, .control-group label, .controls, .control-group input {
+form,
+.control-group,
+.control-group label,
+.controls,
+.control-group input {
   display: inline;
   margin: 0;
 }

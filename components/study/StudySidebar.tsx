@@ -29,7 +29,10 @@ export default function StudySidebar({
     <SideBox id="board_list">
       <SideBoxTitle content="스터디" />
       <SideBoxContent id="board_list_content">
-        <div className="study_toggle_section" onClick={() => setShowWorking((prev) => !prev)}>
+        <div
+          className="study_toggle_section"
+          onClick={() => setShowWorking((prev) => !prev)}
+        >
           <h4 className="study_toggle_title"> 진행중인 스터디 </h4>
           <span className="list_switch"> {showWorking ? "−" : "+"}</span>
         </div>
@@ -43,9 +46,12 @@ export default function StudySidebar({
           </ul>
         )}
 
-        <div className="study_toggle_section" onClick={() => setShowPending((prev) => !prev)}>
+        <div
+          className="study_toggle_section"
+          onClick={() => setShowPending((prev) => !prev)}
+        >
           <h4 className="study_toggle_title">완료된 스터디</h4>
-          <span className="list_switch" >{showPending ? "−" : "+"}</span>
+          <span className="list_switch">{showPending ? "−" : "+"}</span>
         </div>
         {showPending && (
           <ul id="pending_study_list" className="study_list">
