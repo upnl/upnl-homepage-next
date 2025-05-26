@@ -36,7 +36,7 @@ export default async function UnloginLayout({
         </div>
         <ul id="category">
           <li id="category_project" className="category_content">
-            <Link href="/public/project">프로젝트</Link>
+            <Link href="/public/projects">프로젝트</Link>
           </li>
           <li id="category_workshop" className="category_content">
             <Link href="/public/workshop/0">워크샵</Link>
