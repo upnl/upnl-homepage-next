@@ -10,7 +10,7 @@
  * @lastModified 2025-05-14
  *
  * @component
- * @param {Project} project - 표시할 프로젝트 객체
+ * @param {ProjectSuite} project - 표시할 프로젝트 객체
  * @param {boolean} [user_login] - 로그인 여부 (TODO)
  * @param {number?} width - 카드 너비 (px). 값이 주어지지 않으면 355px로 설정됨.
  *
@@ -22,10 +22,10 @@ import Image from 'next/image'
 // Styles
 import "@/styles/components/project/project-card.css"
 // Types
-import { Project } from '@/types/project'
+import { ProjectSuite } from '@/utils/typeSuite'
 
 type ProjectCardProps = {
-  project: Project
+  project: ProjectSuite
   width?: number
 }
 

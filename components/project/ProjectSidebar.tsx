@@ -5,9 +5,9 @@ import { SideBox, SideBoxTitle, SideBoxContent } from '@/components/commons'
 // Styles
 import "@/styles/components/project/project-sidebar.css";
 // Types
-import { Project } from '@/types/project'
+import { ProjectSuite } from '@/utils/typeSuite'
 
-type ProjectSidebarProps = { projects: Project[] }
+type ProjectSidebarProps = { projects: ProjectSuite[] }
 export default function ProjectSide({ projects }: ProjectSidebarProps) {
   return (
     <SideBox>

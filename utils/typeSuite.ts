@@ -1,6 +1,6 @@
 // /types/project.ts
 
-export type Project = {
+export type ProjectSuite = {
   no: number
   name: string
   genre: string
@@ -17,10 +17,4 @@ export type Project = {
   is_show_page: boolean
   participant_list: { name: string }[]
   tag_list: string[]
-}
-
-export type Tag = {
-  no: number
-  content: string
-  count: number
 }

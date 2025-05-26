@@ -1,12 +1,13 @@
 // @/utils/database.ts
-import { Project, Tag } from '@/types/project'
+import { ProjectSuite } from '@/utils/typeSuite'
+import { TagCount } from '@/utils/types'
 
 export async function getProjectsDataSuite(): Promise<{
-  workingProjects: Project[]
-  pendingProjects: Project[]
+  workingProjects: ProjectSuite[]
+  pendingProjects: ProjectSuite[]
   yearList: number[]
 }> {
-  const pendingProjects: Project[] = [
+  const pendingProjects: ProjectSuite[] = [
     {
       no: 5,
       name: 'UPnL 포켓몬 DB',
@@ -68,7 +69,7 @@ export async function getProjectsDataSuite(): Promise<{
     ...new Set(pendingProjects.filter(p => p.finish_date).map(p => new Date(p.finish_date!).getFullYear()))
   ].sort((a, b) => b - a)
 
-  const workingProjects: Project[] = [
+  const workingProjects: ProjectSuite[] = [
     {
       no: 5,
       name: 'UPnL 포켓몬 DB',
@@ -151,9 +152,9 @@ export async function getProjectsDataSuite(): Promise<{
 }
 
 export async function getTagData(): Promise<{
-  tagList: Tag[]
+  tagList: TagCount[]
 }> {
-  const tagList: Tag[] = [
+  const tagList: TagCount[] = [
     { no: 1, content: 'DB', count: 3 },
     { no: 2, content: '게임', count: 2 },
     { no: 3, content: '퍼즐', count: 1 },

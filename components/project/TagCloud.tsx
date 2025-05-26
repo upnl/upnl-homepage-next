@@ -5,7 +5,7 @@ import { SideBox, SideBoxTitle, SideBoxContent } from '@/components/commons'
 // Styles
 import '@/styles/login/projects/tagcloud.css'
 // Types
-import { Tag } from '@/types/project'
+import { TagCount } from '@/utils/types'
 
 function tagLevel(count: number): string {
   if (count > 10) return 'tag-contents__tag--xl'
@@ -14,7 +14,7 @@ function tagLevel(count: number): string {
   return 'tag-contents__tag--sm'
 }
 
-type TagCloudProps = { tags: Tag[] }
+type TagCloudProps = { tags: TagCount[] }
 export default function TagCloud({ tags }: TagCloudProps) {
   return (
     <SideBox>

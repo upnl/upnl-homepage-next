@@ -1,3 +1,5 @@
+// @/utils/types.ts
+
 export type Admin = {
   id: number;
   name: string;

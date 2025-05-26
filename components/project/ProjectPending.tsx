@@ -9,7 +9,7 @@
  * 
  * @component
  * @param {number[]} yearList - 선택 가능한 연도 목록
- * @param {Project[]} projects - 전체 완료된 프로젝트 목록 getProjectsDataSuite.pendingProjects
+ * @param {ProjectSuite[]} projects - 전체 완료된 프로젝트 목록 getProjectsDataSuite.pendingProjects
  * @param {number} cardWidth - 카드 너비 (단위=px).
  *
  * @state {number} selectedYear - 현재 선택된 연도 (버튼 클릭으로 변경됨)
@@ -28,17 +28,17 @@ import { useEffect, useState, Fragment } from 'react'
 // Styles
 import "@/styles/components/project/project-pending.css";
 // Types
-import { Project } from '@/types/project'
+import { ProjectSuite } from '@/utils/typeSuite'
 
 type ProjectPendingProps = {
   yearList: number[]
-  projects: Project[]
+  projects: ProjectSuite[]
   cardWidth: number
 }
 
 export default function ProjectPending({ yearList, projects, cardWidth }: ProjectPendingProps) {
   const [selectedYear, setSelectedYear] = useState<number>(yearList[0])
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>([])
+  const [filteredProjects, setFilteredProjects] = useState<ProjectSuite[]>([])
 
   useEffect(() => {
     const filtered = projects.filter(

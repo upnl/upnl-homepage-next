@@ -4,10 +4,10 @@
 import ProjectCard from './ProjectCard'
 import { ContentBox, ContentBoxTitle, ContentBoxGridContent } from '@/components/commons'
 // Types
-import { Project } from '@/types/project'
+import { ProjectSuite } from '@/utils/typeSuite'
 
 type ProjectWorkingProps = {
-  projects: Project[]
+  projects: ProjectSuite[]
   isPublic?: boolean
   cardWidth: number
 }
