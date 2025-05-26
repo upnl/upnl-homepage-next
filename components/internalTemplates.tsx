@@ -94,6 +94,7 @@ export async function Panorama() {
       date: new Date(),
     },
   ];
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const makeGravatarUrl = (_email: string, _size: number) =>
     "https://example.com";
   const prettyDate = (date: Date) => formatDate(date);

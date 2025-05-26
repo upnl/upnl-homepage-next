@@ -130,6 +130,7 @@ export default async function LoginIndex() {
     { no: 1, content: "tag1", count: 5 },
     { no: 2, content: "tag2", count: 10 },
   ];
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const tagLevel = (_count: number) => "";
   const required = 5;
   return (
