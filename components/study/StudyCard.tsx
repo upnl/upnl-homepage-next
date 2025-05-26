@@ -7,7 +7,7 @@ import { StudySuite } from "@/utils/typeSuite";
 
 export default function StudyCard({ study }: { study: StudySuite }) {
   return (
-    <div className="study-card">
+    <div className="study-card study article">
       <div className="study_info">
         <h4 className="study_title">
           <Link href={`/board/${study.board_no}`}>{study.name}</Link>

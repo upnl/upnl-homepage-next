@@ -1,0 +1,150 @@
+#board_list_content h4 {
+  float: left;
+  margin: 0;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.list_switch {
+  float: right;
+  margin-right: 10px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#working_study_list, #pending_study_list {
+  clear: both;
+}
+
+#study {
+  width: 730px;
+}
+
+#study_title {
+  float: left;
+  display: inline-block;
+}
+
+#study_title h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#new_study {
+  float: right;
+  width: 100px;
+  height: 30px;
+  margin-top: 0px;
+  margin-right: 15px;
+  padding: 1px 6px;
+}
+
+#study_detail {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+.study {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width:350px;
+  min-height:160px;
+  margin: 5px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.study:nth-child(2n) {
+  margin-right: 0px;
+}
+
+.study_info {
+  flex: 1;
+}
+
+.study_title {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight:bold;
+}
+
+.study_date {
+  display: inline-block;
+  line-height: 20px;
+}
+
+.study_about {
+  font-size:15px;
+  min-height:60px;
+  width:100%;
+  margin-bottom:10px;
+}
+
+.study_member {
+  text-align: left;
+  font-size:12px;
+}
+
+.study_member_all {
+  text-align: left;
+  font-size: 12px;
+}
+
+.study_tag button {
+  padding: 1px 2px;
+  font-size: 12px;
+}
+
+.tags {
+  margin: 5px 0px;
+  font-size:10px;
+}
+
+.tags span {
+  font-weight: bold;
+}
+
+.tags button {
+  padding: 1px 2px;
+  font-size: 12px;
+}
+
+form, .control-group, .control-group label, .controls, .control-group input {
+  display: inline;
+  margin: 0;
+}
+
+.control-label {
+}
+
+.controls input {
+  width: 65px;
+  height: 20px;
+  margin: 10px 0px;
+}
+
+.study_manage {
+  text-align: right;
+  font-size: 12px;
+}
+
+#pages {
+  clear: both;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 180px;
+}
+
+.page_number {
+  float: left;
+  width: 30px;
+  text-align: center;
+}

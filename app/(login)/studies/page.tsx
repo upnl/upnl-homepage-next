@@ -4,6 +4,7 @@ import StudyGrid from "@/components/study/StudyGrid";
 import TagCloud from "@/components/study/TagCloud";
 import { getStudiesDataSuite } from "@/utils/database/study";
 import { getTagData } from "@/utils/database/tag";
+import '@/app/(login)/studies/study.css'
 
 export default async function StudyPage() {
   const { workingStudies, pendingStudies } = await getStudiesDataSuite();

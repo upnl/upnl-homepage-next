@@ -25,7 +25,7 @@ export type StudySuite = {
   introduction: string;
   status: "working" | "pending";
   board_no: number;
-  start_date: string; // ISO date string (e.g., '2025-01-01')
+  start_date: string; // ISO date string ('2025-01-01')
   finish_date: string | null;
   orderer_id: number;
   participant_list: { name: string }[];
