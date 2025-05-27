@@ -211,7 +211,7 @@ model user {
   year         Int? // fill in null and zero
   dept         String  @db.VarChar(50)
   level        String  @db.VarChar(10)
-  theme        String  @default("default") @db.VarChar(20)
+  theme        String  @default("default") @db.VarChar(256)
   want_to_do   String  @db.Text
   profile      String? @db.Text // change null to empty string
 
