@@ -25,3 +25,14 @@ services:
     command: ["sh", "-c", "yarn global add pnpm && pnpm install && pnpm dev"]
     ports:
       - 3000:3000
+
+  # postgres:
+  #   image: postgres:15.12-alpine
+  #   container_name: upnl-postgres
+  #   volumes:
+  #     - ./docker/postgres:/var/lib/postgresql/data
+  #   environment:
+  #     - POSTGRES_USER=upnl
+  #     - POSTGRES_PASSWORD=passwd
+  #   ports:
+  #     - 5432:5432
