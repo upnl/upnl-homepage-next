@@ -35,6 +35,7 @@ docker-compose down
 
 ## PostgreSQL -> local MySQL DB migration
 
+- 로컬에 `ts-node` 필요
 - 우선 로컬에 PostgreSQL 컨테이너를 하나 띄우고 덤프된 데이터를 집어넣음
   - docker-compose.yml의 `upnl-postgres` 컨테이너를 uncomment하고 실행
   - Postgresql에서 dump된 파일을 `docker/postgres` 폴더 안에 `init.sql`이라는 이름으로 복사하기
