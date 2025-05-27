@@ -1,0 +1,26 @@
+/* @/styles/login/study/study-sidebar.css */
+
+.study_toggle_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.study_toggle_title {
+  font-size: 14px;
+  font-weight: 600;
+  user-select: none;
+}
+
+.list_switch {
+  font-size: 14px;
+  user-select: none;
+}
+
+.study_list {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+}
